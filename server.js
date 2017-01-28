@@ -16,7 +16,7 @@ app.get('/*', function(req, res, next) {
 
 // Redirect to https
 app.get('/*', function(req, res, next) {
-	if (req.secure) {
+	if (!req.secure) {
 		res.redirect('https://' + req.hostname + req.url);
 	} else {
 		next();
