@@ -50,6 +50,12 @@
           margin-top: 0;
         }
       }
+
+      &:last-child {
+        .img-setting {
+          margin-bottom: $grid-gutter-width * 4;
+        }
+      }
     }
 
     .img-setting {
