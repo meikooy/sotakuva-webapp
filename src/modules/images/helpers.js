@@ -21,7 +21,7 @@ export const createQueryFromVisibilityFilter = filter => {
 
   switch (filter.name) {
     case 'era': return {search: null, params: {filters: `era=${filter.params.era}`, ...paramsBase}};
-    case 'search': return {search: filter.search, params: paramsBase};
+    case 'search': return {search: filter.params.search, params: paramsBase};
   }
 
   return {};
