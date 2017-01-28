@@ -1,0 +1,77 @@
+// colors
+$state-primary-color: #ECF7FF;
+$brand-primary-light: lighten(adjust-hue($brand-primary, -15%), 35%);
+$brand-primary-lighter: lighten(adjust-hue($brand-primary, -15%), 41%);
+
+
+// brand colors
+$brand-colors:(primary, $brand-primary),
+              (success, $brand-success),
+              (warning, $brand-warning),
+              (info, $brand-info),
+              (muted, $gray-light),
+              (danger, $brand-danger);
+
+
+// buttons
+$btn-font-size: 14px !default;
+
+
+// typography
+$font-size-p: 18px !default;
+$margin-bottom-p: 25px !default;
+$font-size-lead: 24px !default;
+$margin-bottom-lead: $grid-gutter-width !default;
+$margin-bottom-list: $grid-gutter-width !default;
+
+
+// navbar
+$navbar-text-size: 14px !default;
+$navbar-offset-top: $grid-gutter-width !default;
+$navbar-logo-height: 40px !default;
+$navbar-text-font-weight: 400 !default;
+$navbar-text-color: $gray-dark !default;
+$navbar-text-color-hover: $gray-darker !default;
+$navbar-text-color-active: $gray-darker !default;
+$navbar-collapse-under-height: 40px !default;
+
+
+// sidebar
+$sidebar-width: 320px;
+
+
+// footer
+$font-size-footer: 14px;
+
+
+// layout
+$content-offset-top: $navbar-height + ($navbar-offset-top * 2) !default;
+$content-offset-top-lg: $content-offset-top !default;
+$content-offset-top-md: $content-offset-top !default;
+$content-offset-top-sm: $content-offset-top !default;
+$content-offset-top-xs: $content-offset-top !default;
+
+
+// shadows
+$shadow-looser: rgba(0, 0, 0, 0.10) 0px 8px 10px,
+                rgba(0, 0, 0, 0.07) 0px 14px 24px;
+$shadow-loose: rgba(0, 0, 0, 0.10) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 6px 12px;
+$shadow-tight: rgba(0, 0, 0, 0.10) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 4px 10px;
+$shadow-tighter: rgba(0, 0, 0, 0.10) 0px 1px 1px,
+                rgba(0, 0, 0, 0.07) 0px 2px 3px;
+
+
+// bootstrap breakpoints
+$breakpoints: (
+  'large':'(min-width: $screen-lg)',
+  'medium-and-up':'(min-width:$screen-md)',
+  'medium':'(max-width:$screen-md-max) and (min-width:$screen-md-min)',
+  'medium-and-below': '(max-width:$screen-md-max)',
+  'small-and-up':'(min-width:$screen-sm)',
+  'small':'(max-width: $screen-sm-max) and (min-width:$screen-sm-min)',
+  'small-and-below':'(max-width: $screen-sm-max)',
+  'x-small-and-up':'(min-width:$screen-xs)',
+  'x-small':'(max-width: $screen-xs-max)'
+);

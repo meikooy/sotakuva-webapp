@@ -1,0 +1,36 @@
+header.mobile-header {
+  position: fixed;
+  background: #fff;
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 30px;
+    margin: 0 10px;
+
+    img {
+      height: 24px;
+      width: auto;
+    }
+  }
+
+  span.title {
+    margin: 0 10px;
+    color: $gray;
+  }
+
+  .back-btn {
+    padding: 0px;
+    width: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,27 @@
+pre {
+  font-size: 12px;
+  border: 0px;
+  box-shadow: $shadow-tighter;
+  background: $gray-lighter;
+  @include user-select(text);
+  padding: 3px 6px;
+  color: $gray-dark;
+}
+
+.CodeMirror {
+  border-top: 1px solid $gray-lighter;
+  box-shadow: $shadow-tight;
+  transition: box-shadow 0.2s ease;
+
+  &.CodeMirror-focused {
+    box-shadow: $shadow-looser;
+  }
+
+  pre {
+    box-shadow: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}

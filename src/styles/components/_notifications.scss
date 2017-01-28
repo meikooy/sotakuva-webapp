@@ -1,0 +1,22 @@
+#notifications {
+  position: fixed;
+  top: 10px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  max-width: 600px;
+  z-index: 1100;
+
+  .alert {
+    opacity: 0.97;
+    box-shadow: $shadow-tight;
+    cursor: pointer;
+  }
+
+  &.notifications-mobile {
+    top: 50px;
+    z-index: 1200;
+    left: 10px;
+    right: 10px;
+  }
+}

@@ -1,0 +1,39 @@
+.nav-pills {
+	> li {
+		> a {
+			padding: 5px 10px;
+			color: $gray-darker;
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+
+		&.active {
+			font-weight: 700;
+
+			> ul {
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.nav-links {
+    li {
+        margin-bottom: 0px;
+
+        a {
+            padding: 8px;
+        }
+    }
+    
+    li.active {
+        a {
+            color: $gray-dark;
+            cursor: default;
+            background: transparent;
+        }
+    }
+}

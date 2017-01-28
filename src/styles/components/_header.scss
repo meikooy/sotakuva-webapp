@@ -1,0 +1,200 @@
+header.header {
+	position: relative;
+	background: $gray-light;
+	padding: $grid-gutter-width / 3 $grid-gutter-width / 2;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: $grid-gutter-width;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  @media screen and (max-width: $screen-sm-max) {
+    margin-bottom: $grid-gutter-width / 2;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: $grid-gutter-width / 3 $grid-gutter-width / 4;
+    margin-bottom: $grid-gutter-width / 4;
+  }
+
+	h1 {
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0;
+		display: inline-block;
+
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: 17px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 15px;
+    }
+	}
+
+  h3, h4 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+
+    @media screen and (max-width: $screen-sm-max) {
+
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+
+    }
+  }
+
+  ol.breadcrumb {
+    margin-bottom: 0px;
+
+    li {
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: 13px;
+    }
+  }
+
+	&.header-primary {
+		background: $brand-primary;
+		color: #fff;
+	}
+
+	&.header-success {
+		background: $brand-success;
+		color: #fff;
+	}
+
+  &.header-default {
+    padding-top: 0px;
+    background: #fff;
+    color: $gray-dark;
+    border-bottom: 1px solid darken($gray-lighter, 5%);
+    padding: $grid-gutter-width / 4 0;
+
+    @media screen and (max-width: $screen-sm-max) {
+      padding: $grid-gutter-width / 4 $grid-gutter-width / 2;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: $grid-gutter-width / 4 $grid-gutter-width / 4;
+    }
+
+    h1 {
+        color: $gray-dark;
+    }
+
+    .header-actions {
+      color: inherit;
+
+      .btn.btn-link {
+        color: inherit;
+      }
+    }
+  }
+
+  &.header-occupy-horizontal-space {
+    margin-left: -$grid-gutter-width / 2;
+    margin-right: -$grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+
+    @media screen and (max-width: $screen-sm-max) {
+      margin-left: -$grid-gutter-width / 4;
+      margin-right: -$grid-gutter-width / 4;
+      padding-left: $grid-gutter-width / 4;
+      padding-right: $grid-gutter-width / 4;
+    }
+  }
+
+	.header-actions {
+		color: #fff;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .divider {
+      display: block;
+      width: 1px;
+      margin: 0 10px;
+    }
+
+		.btn {
+			padding: 5px 10px;
+
+      i {
+        margin-right: 5px;
+
+        .btn-icon & {
+          margin-right: 0px;
+        }
+      }
+
+      &.btn-link {
+        color: #fff;
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-width: $screen-xs-max) {
+        font-size: 13px;
+      }
+
+      &.btn-header-full-height {
+        padding-top: $grid-gutter-width / 3;
+        margin-top: -$grid-gutter-width / 3;
+        padding-bottom: $grid-gutter-width / 3;
+        margin-bottom: -$grid-gutter-width / 3;
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+        border-radius: 0px;
+
+        &:last-child {
+          border-top-right-radius: 3px;
+          margin-right: -$grid-gutter-width / 2;
+
+          @media screen and (max-width: $screen-xs-max) {
+            margin-right: -$grid-gutter-width / 4;
+          }
+        }
+      }
+		}
+	}
+
+	.progress {
+		position: absolute;
+    top: 100%;
+		left: 0;
+		right: 0;
+		height: 7px;
+		border-radius: 0;
+    padding-top: 1px;
+    margin-bottom: 0px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+		.progress-bar {
+			border-top-right-radius: 0px;
+      border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+      box-shadow: inset rgba(0, 0, 0, 0.13) 0px -3px 0px;
+		}
+
+		.progress {
+			box-shadow: none;
+		}
+	}
+}
+
+.container-fluid.container-header {
+  @media screen and (max-width: $screen-sm-max) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

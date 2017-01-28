@@ -1,0 +1,64 @@
+.card {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: $shadow-tight;
+  padding: $grid-gutter-width;
+  margin-bottom: $grid-gutter-width / 2;
+
+  @media screen and (max-width: $screen-sm-max) {
+    padding: $grid-gutter-width / 1.5;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: $grid-gutter-width / 2;
+  }
+
+  &.card-sm {
+    padding: $grid-gutter-width / 2;
+  }
+
+  &.card-lg {
+    padding: $grid-gutter-width * 2;
+
+    @media screen and (max-width: $screen-sm-max) {
+      padding: $grid-gutter-width;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: $grid-gutter-width / 1.5 $grid-gutter-width / 2;
+    }
+  }
+
+  &.card-shadow-xs {
+    box-shadow: $shadow-tighter;
+  }
+
+  &.card-shadow-sm {
+    box-shadow: $shadow-tight;
+  }
+
+  &.card-shadow-md {
+    box-shadow: $shadow-loose;
+  }
+
+  &.card-shadow-lg {
+    box-shadow: $shadow-looser;
+  }
+
+  @each $name, $color in $brand-colors {
+    &.card-#{$name} {
+      background: $color;
+
+      h3,
+      h4 {
+        color: #fff;
+      }
+
+      p,
+      small,
+      ul {
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+  }
+}

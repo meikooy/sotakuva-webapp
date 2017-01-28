@@ -1,0 +1,125 @@
+.list-group {
+  font-size: 14px;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .list-group-item {
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    transition: color 0.2s ease;
+
+    i.fa {
+      color: $gray-light;
+      font-size: 18px;
+      text-align: center;
+      width: 24px;
+      display: inline-block;
+      line-height: 24px;
+      position: absolute;
+      top: 50%;
+      margin-top: -12px;
+      left: 5px;
+      transition: all 0.2s ease;
+
+      @each $name, $color in $brand-colors {
+        &.text-#{$name} {
+          color: $color;
+        }
+      }
+    }
+
+    &:hover i {
+      color: $gray;
+    }
+  }
+
+  .list-group-item.active {
+    font-weight: 700;
+    cursor: default;
+
+    i {
+      color: $gray-dark;
+      font-size: 21px;
+    }
+  }
+
+  &.card {
+    padding: 10px;
+
+    .list-group-item {
+      transition: 0.2s all ease;
+      border-radius: 0px;
+      margin-bottom: 0px;
+
+      &:hover {
+        background: $gray-lightest;
+      }
+    }
+  }
+}
+
+
+// basic list groups
+div.list-group {
+  &.card {
+    .list-group-item {
+      border-bottom: 1px solid $gray-lighter;
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+
+
+// list groups with component class ul may include list groups
+ul.list-group {
+  padding: 10px;
+
+  .list-group {
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+    li {
+      margin-bottom: 0px;
+    }
+
+    .list-group-item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 32px;
+
+      i {
+        font-size: 14px;
+      }
+
+      &.active {
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &.card {
+    li {
+      border-bottom: 1px solid $gray-lighter;
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      li {
+        border-bottom: 0px;
+      }
+    }
+  }
+}

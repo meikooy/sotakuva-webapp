@@ -1,0 +1,21 @@
+ul, ol {
+	margin-bottom: $margin-bottom-list;
+  padding-top: $grid-gutter-width / 4;
+
+	li {
+		padding-left: 8px;
+		margin-bottom: 10px;
+
+	}
+}
+
+dl {
+  dt {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  dd {
+    margin-bottom: 8px;
+  }
+}

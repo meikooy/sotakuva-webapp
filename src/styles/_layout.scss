@@ -1,0 +1,173 @@
+body, html, #root {
+  user-select: none;
+  cursor: default;
+}
+
+
+// page
+.page {
+  &.page-faded {
+    background: $gray-lightest;
+  }
+}
+
+.page-wrapper {
+  padding: 10px 20px;
+
+  @media (max-width: $screen-md-max) {
+    padding: 10px 10px;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    padding: 10px 0;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0;
+  }
+}
+
+// content
+.content {
+  padding-bottom: $grid-gutter-width;
+  margin: 0px auto;
+  max-width: 720px;
+}
+
+
+// sidebar
+.sidebar {
+  padding-top: 5px;
+}
+
+
+// page container
+.view {
+  padding-top: $content-offset-top;
+
+  @include respond('medium-and-below') {
+    padding-top: $content-offset-top-md;
+  }
+
+  @include respond('small-and-below') {
+    padding-top: $content-offset-top-sm;
+  }
+
+  @include respond('x-small') {
+    padding-top: $content-offset-top-xs;
+  }
+
+  &.view-mobile {
+    padding-top: 40px;
+    padding-bottom: 56px;
+
+    .page {
+      padding-top: 15px;
+      padding-bottom: 25px;
+
+      &.page-faded {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
+      }
+    }
+  }
+}
+
+
+// container responsiveness
+.container-fluid, .container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 $grid-gutter-width;
+
+  @media screen and (max-width: $screen-md-max) {
+    padding: 0 $grid-gutter-width / 1.5;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    padding: 0 $grid-gutter-width / 2;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding: 0 $grid-gutter-width / 3;
+  }
+}
+
+
+// sections
+section {
+  margin-bottom: $grid-gutter-width * 2;
+
+  &.container,
+  &.container-fluid {
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+
+// dividers
+hr {
+  border: 0px;
+  background: $gray-lighter;
+  margin: $grid-gutter-width 0;
+  height: 4px;
+
+  &.hr-transparent {
+    background: transparent;
+  }
+
+  &.hr-xs {
+    margin: ($grid-gutter-width / 3) 0;
+    height: 1px;
+  }
+
+  &.hr-sm {
+    margin: ($grid-gutter-width / 2) 0;
+    height: 2px;
+  }
+
+  &.hr-lg {
+    margin: ($grid-gutter-width * 2) 0;
+    height: 12px;
+  }
+
+  &.hr-short {
+    width: 50%;
+  }
+
+  &.hr-shorter {
+    width: 25%;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    margin: ($grid-gutter-width / 2) 0;
+
+    &.hr-sm {
+      margin: ($grid-gutter-width / 3) 0;
+    }
+  }
+}
+
+
+// whitespacing
+
+//// vertical variant
+.whitespace-vertical {
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+
+  &.whitespace-vertical-lg {
+    padding-top: $grid-gutter-width * 2;
+    padding-bottom: $grid-gutter-width * 2;
+  }
+}
+
+//// horizontal variant
+.whitespace-horizontal {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+
+  &.whitespace-horizontal-lg {
+    padding-left: $grid-gutter-width * 2;
+    padding-right: $grid-gutter-width * 2;
+  }
+}

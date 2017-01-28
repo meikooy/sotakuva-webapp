@@ -1,0 +1,12 @@
+#info-bar {
+  margin-bottom: 30px;
+
+  .alert {
+    margin-bottom: 10px;
+    padding: 8px $grid-gutter-width / 2;
+  }
+
+  &.info-bar-mobile {
+    margin-top: 10px;
+  }
+}

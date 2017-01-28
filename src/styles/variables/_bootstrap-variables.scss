@@ -1,0 +1,109 @@
+// layout
+$grid-gutter-width: 40px;
+
+
+// typography
+$font-size-base: 14px;
+$font-size-large: 18px;
+$font-size-small: 12px;
+$line-height-base: 1.4;
+$font-family-sans-serif: 'Oswald', Helvetica, Arial;
+$font-family-serif: Georgia, Times, Serif;
+$font-family-base: $font-family-serif;
+$font-family-monospace: Courier;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 700;
+$headings-line-height: 0.9;
+$font-size-h1: 54px;
+$font-size-h2: 36px;
+$font-size-h3: 32px;
+$font-size-h4: 24px;
+$font-size-h5: 18px;
+$font-size-h6: 12px;
+
+
+// colors
+$gray-lightest: #FBFBFB;
+$gray-lighter: #eee;
+$gray-light: #b5b5b5;
+$gray: #818181;
+$gray-dark: #565656;
+$gray-darker: #333;
+$brand-primary: #4566DE;
+$brand-success: #66B41C;
+$brand-warning: #C8AB1D;
+$brand-danger: #F03C3C;
+
+
+// state colors
+$state-info-text: $brand-primary;
+$state-info-border: $brand-primary;
+$state-success-text: $brand-success;
+$state-success-border: $brand-success;
+$state-danger-text: $brand-danger;
+$state-danger-border: $brand-danger;
+$state-warning-text: saturate(darken($brand-warning, 4%), 4%);
+$state-warning-border: $brand-warning;
+
+
+// border radius
+$border-radius-base: 3px;
+$border-radius-large: 6px;
+$border-radius-small: 3px;
+
+
+// buttons
+$btn-font-weight: 700;
+
+
+// navbar
+$navbar-default-bg: #fff;
+$navbar-default-border: transparent;
+$navbar-height: 50px;
+
+
+// jumbotron
+$jumbotron-bg: transparent;
+$jumbotron-font-size: $font-size-base;
+$jumbotron-heading-font-size: $font-size-h1;
+$jumbotron-padding: 0;
+
+
+// breadcrumb
+$breadcrumb-bg: none;
+$breadcrumb-separator: "›";
+
+
+// table
+$table-bg-accent:               $gray-lighter;
+$table-bg-hover:                $gray-lighter;
+$table-border-color:            darken($gray-lighter, 4%);
+
+
+// modals
+$modal-header-border-color: transparent;
+$modal-sm: 420px;
+
+
+// nav pills
+$nav-pills-active-link-hover-bg: transparent;
+$nav-pills-active-link-hover-color: $gray-darker;
+
+
+// list group
+$list-group-bg:                 transparent;
+$list-group-border:             transparent;
+$list-group-border-radius:      $border-radius-large;
+$list-group-hover-bg:           transparent;
+$list-group-active-color:       $gray-darker;
+$list-group-active-bg:          $gray-lightest;
+$list-group-active-border:      transparent;
+$list-group-active-text-color:  $gray;
+
+$list-group-disabled-color:      $gray;
+$list-group-disabled-bg:         transparent;
+$list-group-disabled-text-color: $gray-light;
+
+$list-group-link-color:         #555 !default;
+$list-group-link-hover-color:   $list-group-link-color !default;
+$list-group-link-heading-color: #333 !default;

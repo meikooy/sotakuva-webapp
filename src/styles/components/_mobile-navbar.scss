@@ -1,0 +1,49 @@
+footer.mobile-navbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+
+  table {
+    width: 100%;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
+
+    tr {
+
+      td {
+        padding: 8px;
+        text-align: center;
+        border-right: 1px solid $gray-lighter;
+        color: $gray-light;
+        vertical-align: middle;
+        width: 20%;
+
+        &:last-child {
+          border-right: 0px;
+        }
+
+        &.active {
+          color: $brand-primary;
+        }
+
+        &:active {
+          color: $gray;
+        }
+
+        i.fa {
+          margin: 0px;
+          width: 20px;
+          line-height: 25px;
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 11px;
+          display: block;
+        }
+      }
+    }
+  }
+}

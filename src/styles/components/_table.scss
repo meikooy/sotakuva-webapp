@@ -1,0 +1,125 @@
+table.table {
+  p {
+    font-size: $font-size-base;
+    margin-bottom: $margin-bottom-p * 0.5;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  tbody {
+    tr:first-child {
+      td,
+      th {
+        border-top: 0px;
+      }
+    }
+
+    tr.selected td {
+      background: $state-primary-color;
+    }
+  }
+
+  &.no-border {
+    tbody tr td,
+    tbody tr th {
+      border: 0px;
+    }
+  }
+
+  &.table-lg {
+    thead {
+      th,
+      td {
+        padding: 20px 15px 10px;
+      }
+    }
+
+    tbody {
+      td,
+      th {
+        padding: 15px 15px;
+      }
+    }
+
+    .whitespace-vertical {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      thead {
+        th,
+        td {
+          padding: 15px 5px 8px;
+        }
+      }
+
+      tbody {
+        td,
+        th {
+          padding: 10px 5px;
+        }
+      }
+
+      .whitespace-vertical {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  &.table-hover {
+    tr {
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: $gray-lightest;
+      }
+    }
+
+    td {
+      transition: all 0.2s ease;
+    }
+  }
+
+  th,
+  td {
+    position: relative;
+
+    &:first-child i {
+      display: inline-block;
+      position: absolute;
+      line-height: 24px;
+      top: 50%;
+      left: 10px;
+      margin-top: -12px;
+
+      & + * {
+        margin-left: 25px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .whitespace-vertical {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  tbody tr td {
+    vertical-align: middle;
+
+    @media (max-width: $screen-xs-max) {
+      vertical-align: top;
+    }
+  }
+}
+
+.card table:last-child,
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0px;
+}

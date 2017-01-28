@@ -1,0 +1,4 @@
+[ignore]
+.*/dist/.*
+*.test.js
+.*/node_modules/.*

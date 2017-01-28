@@ -1,0 +1,144 @@
+.input-group-rounded {
+	&.input-group-lg {
+		> *:first-child {
+			border-top-left-radius: 46px;
+			border-bottom-left-radius: 46px;
+			padding-left: 25px;
+		}
+
+		> *:last-child {
+			border-top-right-radius: 46px;
+			border-bottom-right-radius: 46px;
+			padding-right: 25px;
+		}
+
+		& + .help-block {
+			padding-top: 5px;
+			padding-left: 20px;
+		}
+	}
+
+  &.input-group {
+    > *:first-child {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      padding-left: 10px;
+    }
+
+    > *:last-child {
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      padding-right: 5px;
+    }
+  }
+}
+
+.input-group {
+  .input-group-addon {
+    border: 2px solid lighten($gray-light, 17%);
+    padding: 5px 10px;
+    background: $gray-lighter;
+    color: $gray;
+    font-weight: 700;
+    font-size: $font-size-small;
+
+    &:first-child {
+      border-right: 0px;
+    }
+
+    &:last-child {
+      border-left: 0px;
+    }
+  }
+
+  span.input-group-btn button.btn {
+    margin-left: 0px;
+  }
+
+  &.input-group-sm {
+    .input-group-addon {
+
+    }
+
+    .form-control {
+      height: 32px;
+    }
+
+    .btn.input-group-btn {
+      height: 32px;
+    }
+
+    .input-group-btn > .btn {
+      height: 32px;
+    }
+  }
+
+  .form-group-lg & {
+    .input-group-addon {
+      font-size: $font-size-large;
+    }
+  }
+
+  &.input-group-dual {
+    .form-control {
+      width: 50%;
+
+      &:first-child {
+        border-right-color: transparent;
+
+        &:hover {
+          border-right-color: $gray-light;
+        }
+
+        &:focus {
+          border-right-color: $brand-primary;
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+	label:not(.radio-inline) {
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+  select:not([multiple]) {
+    height: 35px;
+  }
+
+  .help-block {
+    font-size: 13px;
+
+    &.no-validation-state {
+      color: $gray !important;
+    }
+  }
+}
+
+.radio-inline {
+	input {
+		margin-top: 2px;
+	}
+}
+
+label.checkbox {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.form-control {
+  border: 2px solid lighten($gray-light, 17%);
+  box-shadow: none;
+  color: $gray-dark;
+  height: auto;
+
+  &:hover {
+    border-color: $gray-light;
+  }
+
+  &:focus {
+    border-color: $brand-primary;
+  }
+}

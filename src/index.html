@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html<% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Rintamalla">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1,initial-scale=1,user-scalable=no">
+    <link href="/images/favicon.png" rel="shortcut icon">
+    <title></title>
+
+    <style>
+      .loader {
+        left: 50%;
+        top: 50%;
+        position: fixed;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+        .loader #spinner {
+          box-sizing: border-box;
+          stroke: #673AB7;
+          stroke-width: 2px;
+          -webkit-transform-origin: 50%;
+                  transform-origin: 50%;
+          -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+                  animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite; }
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0);
+                  transform: rotate(0); }
+        to {
+          -webkit-transform: rotate(450deg);
+                  transform: rotate(450deg); } }
+
+      @-webkit-keyframes line {
+        0% {
+          stroke-dasharray: 2, 85.964;
+          stroke: #777;
+          stroke-width: 4px;
+          -webkit-transform: rotate(0);
+                  transform: rotate(0); }
+        50% {
+          stroke: #222;
+          stroke-width: 2px;
+          stroke-dasharray: 65.973, 21.9911;
+          stroke-dashoffset: 0; }
+        100% {
+          stroke: #777;
+          stroke-width: 4px;
+          stroke-dasharray: 2, 85.964;
+          stroke-dashoffset: -65.973;
+          -webkit-transform: rotate(90deg);
+                  transform: rotate(90deg); } }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+      <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+
+    <!-- Start of Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    </script>
+
+  </head>
+  <body>
+    <div id="root">
+      <div id="loader" class="loader">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+          <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+        </svg>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fi"></script>
+
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+      <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+  </body>
+</html>

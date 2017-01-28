@@ -1,0 +1,142 @@
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6, i, thead th {
+  -webkit-font-smoothing: antialiased;
+}
+
+@media
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+h1 {
+  margin-bottom: $grid-gutter-width * 1.4;
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: $font-size-h1 * 0.8;
+    margin-bottom: $grid-gutter-width;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: $font-size-h1 * 0.6;
+  }
+}
+
+.h2,
+h2 {
+  margin-bottom: $grid-gutter-width;
+  padding-top: $grid-gutter-width;
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: $font-size-h3 * 0.85;
+  }
+}
+
+.h3,
+h3 {
+  margin-bottom: $grid-gutter-width;
+  color: $gray-dark;
+  font-weight: 400;
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: $font-size-h3 * 0.85;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: $font-size-h3 * 0.75;
+    margin-bottom: $grid-gutter-width / 2;
+  }
+}
+
+.h4,
+h4 {
+  color: $gray;
+  font-weight: 400;
+  margin-bottom: $grid-gutter-width / 2;
+  padding-top: $grid-gutter-width / 3;
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: $font-size-h4 * 0.9;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: $font-size-h4 * 0.8;
+  }
+
+  &.rule {
+    padding-bottom: 8px;
+    border-bottom: 4px solid $gray-lighter;
+  }
+
+  &.dark {
+    color: $gray-dark;
+  }
+}
+
+.h5,
+h5 {
+  color: $gray;
+  font-weight: 400;
+  margin-bottom: $grid-gutter-width / 3;
+  padding-top: $grid-gutter-width / 3;
+
+  @media screen and (max-width: $screen-sm-max) {
+    font-size: $font-size-h5 * 0.9;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: $font-size-h5 * 0.8;
+  }
+
+  &.rule {
+    padding-bottom: 8px;
+    border-bottom: 4px solid $gray-lighter;
+  }
+
+  &.dark {
+    color: $gray-dark;
+  }
+}
+
+p {
+  font-size: $font-size-p;
+  margin-bottom: $margin-bottom-p;
+
+  @media screen and (max-width: $screen-xs-max) {
+    font-size: $font-size-base;
+  }
+
+  &.lead {
+    font-weight: 400;
+    font-size: $font-size-lead;
+    color: $gray-light;
+    margin-bottom: $margin-bottom-lead;
+
+    @media screen and (max-width: $screen-sm-max) {
+      font-size: $font-size-lead * 0.9;
+      margin-bottom: $margin-bottom-lead;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: $font-size-p;
+      margin-bottom: $margin-bottom-p;
+    }
+  }
+
+  &.small {
+    font-size: $font-size-base;
+
+    @media screen and (max-width: $screen-xs-max) {
+      font-size: $font-size-base * 0.85;
+    }
+  }
+}
+
+p + .btn-toolbar {
+  padding-top: 20px;
+}

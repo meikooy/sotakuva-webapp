@@ -1,0 +1,36 @@
+ul.dropdown-menu {
+  border: 0px;
+  box-shadow: $shadow-loose;
+  border-radius: $border-radius-small;
+  padding: 10px;
+
+  li {
+    padding: 0px;
+    margin-bottom: 0px;
+
+    a {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    &.heading {
+      font-size: 13px;
+      font-weight: 700;
+      color: $gray-light;
+      padding-top: 20px;
+      padding-bottom: 5px;
+
+      &:first-child {
+        padding-top: 0px;
+      }
+    }
+
+    &.divider {
+      margin: 10px 0;
+
+      &.sub-divider {
+        margin: 5px 10px;
+      }
+    }
+  }
+}
