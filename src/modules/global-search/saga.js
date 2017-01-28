@@ -6,14 +6,9 @@ import {
   SEARCH,
   CLEAR,
   search,
-  startFetching,
-  stopFetching,
-  receiveSearchResults,
   searchError,
   clear,
-  setSearchedFlag,
-  LOAD_MORE,
-  receiveMore
+  setSearchedFlag
 } from './actions';
 import {receiveResponse} from '../images/actions';
 import {goTo, navigate, goBack, replace} from '../navigation/actions';
@@ -74,27 +69,6 @@ function* watchInputForRedirection() {
       console.warn(er);
     }
   });
-}
-
-
-/*
-  load more
- */
-function* handleLoadMore() {
-  try {
-    const meta = yield select(getMeta);
-    const {page} = meta;
-    const searchText = yield select(getSearchText);
-    const response = yield api.search(searchText, {page: page + 1});
-
-    yield put(receiveMore(response));
-  } catch (er) {
-    console.warn(er);
-  }
-}
-
-function* watchLoadMore() {
-  yield* takeLatest(LOAD_MORE, handleLoadMore);
 }
 
 
