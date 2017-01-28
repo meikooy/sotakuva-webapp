@@ -24,6 +24,7 @@ export default class MainNavbar extends Component {
       activeFilter,
       onLogoClick,
       onSearchSubmit,
+      onSearchInput,
       activateEra
     } = this.props;
 
@@ -69,6 +70,7 @@ export default class MainNavbar extends Component {
           <Navbar.Form pullLeft>
             <SearchInput
               onSubmit={onSearchSubmit}
+              onChange={onSearchInput}
               initialValues={{search: searchText}} />
           </Navbar.Form>
 

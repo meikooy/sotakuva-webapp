@@ -23,6 +23,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onLogoClick() {
       dispatch(goTo('root'));
     },
+    onSearchInput(val) {
+      dispatch(inputChange(val));
+    },
     onSearchSubmit(attributes) {
       const val = attributes.search;
 

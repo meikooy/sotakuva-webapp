@@ -8,12 +8,18 @@ import Icon from '../icon';
 import cn from 'classnames';
 
 
-const renderField = ({input, type, label}) => <FormControl {...input} type={type} placeholder="HAKU"  />;
+const renderField = ({input, type, label, handleChange}) =>
+  <FormControl
+    {...input}
+    type={type}
+    autoComplete='off'
+    onChange={e => {input.onChange(e); handleChange(e.target.value);}}
+    placeholder="HAKU" />;
 
 
 class SearchForm extends Component {
   render() {
-    const {handleSubmit, pristine, submitting, enableButton} = this.props;
+    const {handleSubmit, pristine, submitting, enableButton, onChange} = this.props;
 
     return (
       <form className="global-search-form" onSubmit={handleSubmit}>
@@ -21,10 +27,7 @@ class SearchForm extends Component {
           <InputGroup.Addon>
             <Icon name="search" />
           </InputGroup.Addon>
-          <Field name="search" label="Tunniste" component={renderField} type='text' />
-          <span className={cn('input-group-btn', {hidden: !enableButton})}>
-            <Button type="submit">Hae</Button>
-          </span>
+          <Field name="search" component={renderField} handleChange={onChange} type='text' />
         </InputGroup>
       </form>
     );

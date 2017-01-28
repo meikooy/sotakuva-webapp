@@ -1,6 +1,6 @@
 import {takeLatest, delay} from 'redux-saga';
 import {call, fork, put, select} from 'redux-saga/effects';
-import {reset} from 'redux-form';
+import {reset, change} from 'redux-form';
 import {
   INPUT_CHANGE,
   SEARCH,
@@ -15,9 +15,11 @@ import {
   LOAD_MORE,
   receiveMore
 } from './actions';
-import {goTo, navigate, goBack} from '../navigation/actions';
+import {receiveResponse} from '../images/actions';
+import {goTo, navigate, goBack, replace} from '../navigation/actions';
 import {getSearchedFlag, getSearchText, getMeta} from './selectors';
-import api from './api';
+import api from '../images/api';
+import {createVisibilityFilter} from '../images/helpers';
 
 
 /*
@@ -25,10 +27,9 @@ perform search
  */
 function* handleSearch({payload}) {
   try {
-    yield put(startFetching());
-    const results = yield api.search(payload);
-    yield put(receiveSearchResults(results));
-    yield put(stopFetching());
+    yield call(delay, 100);
+    const response = yield api.fetchByVisibilityFilter(createVisibilityFilter('search', {search: payload}));
+    yield put(receiveResponse(response));
   } catch (error) {
     console.log(error);
     yield put(searchError(error));
@@ -45,6 +46,10 @@ function* watchSearch() {
   watch input changes
  */
 function* watchInput() {
+  yield* takeLatest(INPUT_CHANGE, handleSearch);
+}
+
+function* watchInputForRedirection() {
   yield* takeLatest(INPUT_CHANGE, function* ({payload}) {
     yield call(delay, 30);
 
@@ -52,10 +57,9 @@ function* watchInput() {
       if (payload === '') {
         yield put(goBack());
         yield put(clear());
+        yield put(change('globalSearch', 'search', ''));
         return;
       }
-
-      yield put(search(payload));
 
       const state = yield select();
       const path = `/haku?search=${payload}`;
@@ -114,6 +118,7 @@ export default function* watch() {
   yield* [
     fork(watchClear),
     fork(watchInput),
+    fork(watchInputForRedirection),
     fork(watchSearch)
   ];
 }
