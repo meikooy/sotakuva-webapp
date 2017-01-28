@@ -7,18 +7,12 @@ const PUBLIC_DIR = `${__dirname}/dist`;
 
 // Redirect to non www
 app.get('/*', function(req, res, next) {
-	console.log('https://' + req.hostname + req.url);
 	if (req.headers.host.match(/^www/) !== null ) {
 		res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
 	}
 	else {
 		next();
 	}
-});
-
-// Redirect to https
-app.get('/*', function(req, res, next) {
-	
 });
 
 // Redirect all routes without extension to the index.html
