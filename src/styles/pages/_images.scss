@@ -27,20 +27,18 @@
   }
 
   .image-wrapper {
-    align-self:stretch;
-
-    img {
-      background-color: $gray-lighter;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-    }
+    flex-grow: 1;
+    align-self: stretch;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 800px;
   }
 
   .image-details {
     width: 300px;
     padding-left: 15px;
+    flex-shrink: 0;
 
     .caption {
       margin-bottom: 30px;
