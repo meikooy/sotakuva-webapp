@@ -11,10 +11,12 @@ export default (
   <Route path='/' component={RootPage}>
     <IndexRoute component={HomePage} />
 
+
     <Route name="terms" path="terms" component={TermsPage}>
     </Route>
 
-    <Route name='images' path='kuvat' component={ImagesPage}>
+    <Route name='images' path='kuvat'>
+      <IndexRoute component={ImagesPage} />
       <Route name='detail' path=':id' component={ImageDetailPage} />
     </Route>
   </Route>
