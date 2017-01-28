@@ -30,11 +30,13 @@ export default class ImageDetail extends Component {
   render() {
     const {image} = this.props;
     const url = getImgUrl(image);
+    const isMobile = window && window.innerWidth < 768;
 
     return (
       <div className="image-container">
-        <div className="image-wrapper" style={getWrapperStyle(image)}>
+        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
           {this.state.loading && <Icon name="spinner" spin />}
+          {!this.state.loading && isMobile && <img src={getImgUrl(image)} />}
         </div>
         <div className="image-details">
           <p className="caption">{image.caption || '-'}</p>

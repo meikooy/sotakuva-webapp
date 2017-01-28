@@ -47,3 +47,36 @@
     }
   }
 }
+
+@media screen and (max-width: $screen-xs-max) {
+  .page.page-images-detail {
+    .image-container {
+      display: block;
+
+      .image-wrapper {
+        height: auto;
+        margin-bottom: $grid-gutter-width / 4;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .image-details {
+        padding: 0;
+        margin-bottom: $grid-gutter-width;
+
+        .caption {
+          margin-bottom: $grid-gutter-width / 4;
+          font-size: 15px
+        }
+
+        h5 {
+          font-size: 14px;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
