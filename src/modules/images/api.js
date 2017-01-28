@@ -7,7 +7,6 @@ import {createQueryFromVisibilityFilter} from './helpers';
 export default {
   fetchByVisibilityFilter(filter) {
     const {search, params} = createQueryFromVisibilityFilter(filter);
-    console.log(search, params);
 
     return new Promise((resolve, reject) => {
       algolia.search(search, params, (err, content) => {

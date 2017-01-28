@@ -10,6 +10,9 @@ import {
   RECEIVE_RESPONSE,
   RECEIVE_ITEM,
   SET_VISIBILITY_FILTER,
+  LOAD_MORE,
+  RECEIVE_MORE,
+  SET_LAST_SCROLLTOP
 } from './actions';
 
 
@@ -33,6 +36,14 @@ export default function images(state = initialState, {payload, type}) {
     )(state);
 
     case SET_VISIBILITY_FILTER: return set('visibilityFilter', payload, state);
+
+    case LOAD_MORE: return set('loadingMore', true, state);
+
+    case RECEIVE_MORE: return pipe(
+      over('byId', byId => ({...byId, ...normalize(payload.hits)})),
+      set('meta.page', payload.page),
+      set('loadingMore', false)
+    )(state);
   }
 
   return state;

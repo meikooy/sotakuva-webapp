@@ -1,19 +1,23 @@
 import {takeLatest, takeEvery, delay} from 'redux-saga';
-import {take, fork, call, put, race} from 'redux-saga/effects';
+import {take, fork, select, call, put, race} from 'redux-saga/effects';
 import {
   OPEN,
   open,
+  LOAD_MORE,
   FETCH_DETAIL,
   SET_VISIBILITY_FILTER,
   FETCH_BY_VISIBILITY_FILTER,
   fetchByVisibilityFilter,
   receiveResponse,
+  receiveMore,
   receiveItem,
   clear,
 } from './actions';
 import {goTo, openUrl, reload} from '../navigation/actions';
 import {setNotification, flashNotification, removeNotification} from '../notifications/actions';
+import {getMeta, getActiveFilter} from './selectors';
 import api from './api';
+import {createVisibilityFilter} from './helpers';
 
 
 /*
@@ -59,6 +63,34 @@ function* watchVisibilityFilters() {
 
 
 /*
+  load more
+ */
+function* handleLoadMore() {
+  try {
+    const meta = yield select(getMeta);
+    const {page} = meta;
+
+    const activeFilter = yield select(getActiveFilter);
+    const {name, params} = activeFilter;
+
+    const filter = createVisibilityFilter(name, {...params, page: page + 1});
+
+    console.log(filter);
+
+    const response = yield api.fetchByVisibilityFilter(filter);
+
+    yield put(receiveMore(response));
+  } catch (er) {
+    console.warn(er);
+  }
+}
+
+function* watchLoadMore() {
+  yield* takeLatest(LOAD_MORE, handleLoadMore);
+}
+
+
+/*
   open
  */
 function* handleOpen({payload}) {
@@ -79,4 +111,5 @@ export default function* watch() {
   yield fork(watchDetailFetches);
   yield fork(watchVisibilityFilterFetches);
   yield fork(watchVisibilityFilters);
+  yield fork(watchLoadMore);
 }

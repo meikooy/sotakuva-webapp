@@ -13,3 +13,4 @@ export const getActiveData = createSelector(
   getImages,
   ({id}, byId) => byId[id] || null
 );
+export const areWeLoadingMore = get('images.loadingMore');
