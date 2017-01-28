@@ -1,15 +1,14 @@
 .front-text-panel {
   box-shadow: #eee 2px 5px 10px;
   text-align: center;
-  float: auto;
   margin: auto;
   position: absolute;
   left: 0px;
   right: 0px;
   bottom: -30px;
   width: 200px;
+  height: 70px;
   background-color: #fff;
-  vertical-align: middle;
   font-family: $headings-font-family;
 }
 
