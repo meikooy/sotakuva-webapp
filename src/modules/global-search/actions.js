@@ -24,6 +24,3 @@ export const searchError = (error) => fsa(SEARCH_ERROR, error);
 
 export const RECEIVE_SEARCH_RESULTS = ns('RECEIVE_SEARCH_RESULTS');
 export const receiveSearchResults = (res) => fsa(RECEIVE_SEARCH_RESULTS, res);
-
-export const SET_SEARCHED = ns('SET_SEARCHED');
-export const setSearchedFlag = () => fsa(SET_SEARCHED);

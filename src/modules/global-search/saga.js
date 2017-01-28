@@ -19,7 +19,7 @@ perform search
 function* handleSearch({payload}) {
   try {
     yield put(startFetching());
-    const data = yield api.search({_q: payload});
+    const data = yield api.search(payload);
     yield put(receiveSearchResults(data));
     yield put(stopFetching());
   } catch (error) {
@@ -28,21 +28,8 @@ function* handleSearch({payload}) {
   }
 }
 
-function* watchSearchTrigger() {
+function* watchSearch() {
   yield* takeLatest(SEARCH, handleSearch);
-}
-
-
-/*
-input changed
- */
-function* handleInputChange({payload}) {
-  yield call(delay, 300);
-  yield* handleSearch({payload});
-}
-
-function* watchInput() {
-  yield* takeLatest(INPUT_CHANGE, handleInputChange);
 }
 
 
@@ -64,7 +51,7 @@ function* watchClear() {
 
 export default function* watch() {
   yield* [
-    fork(watchInput),
-    fork(watchSearchTrigger)
+    fork(watchClear),
+    fork(watchSearch)
   ];
 }

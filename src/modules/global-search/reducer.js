@@ -3,8 +3,7 @@ import {
   CLEAR,
   RECEIVE_SEARCH_RESULTS,
   START_FETCHING,
-  STOP_FETCHING,
-  SET_SEARCHED
+  STOP_FETCHING
 } from './actions';
 import initialState from './initial-state';
 
@@ -20,9 +19,6 @@ export default function globalSearch(state = initialState, {payload, type}) {
 
     // got search results
     case RECEIVE_SEARCH_RESULTS: return assoc('searchResults', payload, state);
-
-    // set searched flag
-    case SET_SEARCHED: return assoc('searched', true, state);
   }
 
   return state;

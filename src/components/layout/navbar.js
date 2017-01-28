@@ -1,13 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import Button from 'react-bootstrap/lib/Button';
-import DropdownButton from 'react-bootstrap/lib/DropdownButton';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
-import InputGroup from 'react-bootstrap/lib/InputGroup';
-import FormControl from 'react-bootstrap/lib/FormControl';
-import {Link} from 'react-router';
-import {push} from 'react-router-redux';
 import SearchInput from '../search/search-input';
 import Icon from '../icon';
 import cn from 'classnames';

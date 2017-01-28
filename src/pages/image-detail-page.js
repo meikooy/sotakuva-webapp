@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import ImagesContainer from '../containers/images/images-container';
+import ImageDetailContainer from '../containers/images/image-detail-container';
 import Page from '../components/layout/page';
 
 
-export default class ImagesPage extends Component {
+export default class ImageDetailPage extends Component {
   render() {
     return (
       <Page {...this.props}>
-        <ImagesContainer />
+        <ImageDetailContainer />
       </Page>
     );
   }

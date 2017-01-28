@@ -53,6 +53,7 @@ function* watchVisibilityFilters() {
   yield* takeLatest(SET_VISIBILITY_FILTER, function* ({payload}) {
     yield put(clearRows());
     yield put(fetchByVisibilityFilter(payload));
+    yield put(goTo('images'));
   });
 }
 
