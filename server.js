@@ -14,15 +14,11 @@ app.get('/*', function(req, res, next) {
 	}
 });
 
-// Append .html to paths with no extension
+// Redirect all routes without extension to the index.html
 app.use(function(req, res, next) {
 	if (req.path.indexOf('.') === -1) {
-		const file = PUBLIC_DIR + req.path + '.html';
-		fs.exists(file, function(exists) {
-			if (exists)
-				req.url += '.html';
-				next();
-			});
+		req.url = '/index.html';
+		next();
 	}
 	else {
 		next();
