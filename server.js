@@ -14,6 +14,15 @@ app.get('/*', function(req, res, next) {
 	}
 });
 
+// Redirect to https
+app.get('/*', function(req, res, next) {
+	if (req.secure) {
+		res.redirect('https://' + req.hostname + req.url);
+	} else {
+		next();
+	}
+});
+
 // Redirect all routes without extension to the index.html
 app.use(function(req, res, next) {
 	if (req.path.indexOf('.') === -1) {
