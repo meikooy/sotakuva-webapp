@@ -18,7 +18,7 @@ export default {
 
   fetchById(id) {
     return new Promise((resolve, reject) => {
-      algolia.search({filters: `id=${id}`}, (err, content) => {
+      algolia.search({filters: `objectID:${id}`}, (err, content) => {
         if (err) reject(err);
         resolve(content);
       });

@@ -14,8 +14,11 @@ export default class ImageDetail extends Component {
     this.state = {loading: true};
   }
 
-  componentDidMount() {
-    const {image} = this.props;
+
+  componentWillReceiveProps(nextProps) {
+    if (!this.state.loading) return;
+    const {image} = nextProps;
+    if (!image) return;
     let img = document.createElement('img');
     img.src = getImgUrl(image);
     img.addEventListener('load', () => {
@@ -29,8 +32,10 @@ export default class ImageDetail extends Component {
 
   render() {
     const {image} = this.props;
-    const url = getImgUrl(image);
     const isMobile = window && window.innerWidth < 768;
+    const url = image && getImgUrl(image);
+
+    if (!image) return null;
 
     return (
       <div className="image-container">
