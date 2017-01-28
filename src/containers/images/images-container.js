@@ -38,7 +38,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch, {location}) => {
   return {
     open(image) {
-      dispatch(replace(`/${location.pathname}${location.search}#${image.objectID}`));
+      dispatch(replace(`${location.pathname}${location.search}#${image.objectID}`));
       dispatch(open(image.objectID));
     },
     loadMore() {
