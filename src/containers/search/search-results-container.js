@@ -18,7 +18,7 @@ class Container extends Component {
   }
 
   render() {
-    return <ImagesContainer {...this.props} />;
+    return <ImagesContainer {...this.props} disableRedirection />;
   }
 }
 

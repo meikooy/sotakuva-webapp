@@ -3,7 +3,6 @@ import {eras} from './dict';
 
 export const initialVisibilityFilter = {name: 'era', params: {era: 1, title: eras[1]}};
 
-/*eslint max-len: 0*/
 export default {
   loaded: false,
   loadingMore: false,
@@ -15,5 +14,5 @@ export default {
     id: null
   },
 
-  visibilityFilter: initialVisibilityFilter,
+  visibilityFilter: null,
 };

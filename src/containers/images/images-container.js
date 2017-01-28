@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Images from '../../components/images/images';
-import {goTo, replace} from '../../modules/navigation/actions';
+import {goTo, replace, redirectTo} from '../../modules/navigation/actions';
 import {
   getImages,
   areImagesLoaded,
   getMeta,
+  getActiveFilter,
   areWeLoadingMore
 } from '../../modules/images/selectors';
 import {open, loadMore, setVisibilityFilter} from '../../modules/images/actions';
@@ -14,7 +15,9 @@ import {initialVisibilityFilter} from '../../modules/images/initial-state';
 class Container extends Component {
 
   componentDidMount() {
-    this.props.load();
+    if (!this.props.visibilityFilter && !this.props.disableRedirection) {
+      this.props.redirectToRoot();
+    }
   }
 
   render() {
@@ -27,7 +30,8 @@ function mapStateToProps(state) {
     imagesLoaded: areImagesLoaded(state),
     images: getImages(state),
     meta: getMeta(state),
-    loadingMore: areWeLoadingMore(state)
+    loadingMore: areWeLoadingMore(state),
+    visibilityFilter: getActiveFilter(state)
   };
 }
 
@@ -40,8 +44,8 @@ const mapDispatchToProps = (dispatch, {location}) => {
     loadMore() {
       dispatch(loadMore());
     },
-    load() {
-      dispatch(setVisibilityFilter(initialVisibilityFilter));
+    redirectToRoot() {
+      dispatch(redirectTo('root'));
     }
   };
 };
