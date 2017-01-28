@@ -34,6 +34,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     activateEra(params) {
       const filter = createVisibilityFilter('era', params);
       dispatch(setVisibilityFilter(filter));
+      dispatch(goTo('images'));
     }
   };
 };
