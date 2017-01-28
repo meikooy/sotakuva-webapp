@@ -44,6 +44,11 @@ export default class ImageDetail extends Component {
         </div>
         <div className="image-details">
           <p className="caption">{image.caption || '-'}</p>
+          <h5>Päiväys: {image.date
+            ? new Date(image.date * 1000)
+            .toLocaleString('fi-FI', {day: 'numeric', month: 'numeric', year: 'numeric'})
+            : '-'}</h5>
+
           <h5>Kuvaaja: {image.author || '-'}</h5>
 
           <h5>Paikka: {image.place || '-'}</h5>
