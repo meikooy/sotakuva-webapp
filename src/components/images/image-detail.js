@@ -4,7 +4,7 @@ import Icon from '../icon';
 const getImgUrl = (img, size) =>
   `https://api.rintamalla.fi/images/${img.objectID}/file?size=${size}`;
 const getWrapperStyle = img => ({
-  backgroundImage: `url(${getImgUrl(img)})`
+  backgroundImage: `url(${getImgUrl(img, 'large')})`
 });
 
 
@@ -39,7 +39,7 @@ export default class ImageDetail extends Component {
 
     return (
       <div className="image-container">
-        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image, 'large')}>
+        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
           {this.state.loading && <Icon name="spinner" spin />}
           {!this.state.loading && isMobile && <img src={getImgUrl(image, 'thumbnail')} />}
         </div>
