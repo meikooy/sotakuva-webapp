@@ -14,6 +14,20 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
+      position: relative;
+
+      .caption {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        padding: 10px 20px;
+        color: #fff;
+        line-height: 1.3;
+        font-family: $headings-font-family;
+        font-size: 13px;
+        background: rgba(0,0,0,0.5);
+      }
     }
   }
 }
