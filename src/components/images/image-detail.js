@@ -38,10 +38,10 @@ export default class ImageDetail extends Component {
 
     return (
       <div className="image-container">
-        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
+        <a href={getImgUrl(image, 'large')} target="_blank" className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
           {this.state.loading && <Icon name="spinner" spin />}
           {!this.state.loading && isMobile && <img src={getImgUrl(image, 'thumbnail')} />}
-        </div>
+        </a>
         <div className="image-details">
           <p className="caption">{image.caption || '-'}</p>
           <h5>Päiväys: {image.date
