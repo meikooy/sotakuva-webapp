@@ -7,6 +7,7 @@ const getWrapperStyle = img => ({
   backgroundImage: `url(${getImgUrl(img, 'large')})`
 });
 
+const isMobile = window && window.innerWidth < 768;
 
 export default class ImageDetail extends Component {
   constructor() {
@@ -20,7 +21,7 @@ export default class ImageDetail extends Component {
     const {image} = nextProps;
     if (!image) return;
     let img = document.createElement('img');
-    img.src = getImgUrl(image);
+    img.src = getImgUrl(image, isMobile ? 'thumbnail' : 'large');
     img.addEventListener('load', () => {
       this.removeLoader();
     });
@@ -32,8 +33,6 @@ export default class ImageDetail extends Component {
 
   render() {
     const {image} = this.props;
-    const isMobile = window && window.innerWidth < 768;
-    const url = image && getImgUrl(image);
 
     if (!image) return null;
 
