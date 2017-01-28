@@ -33,7 +33,11 @@
 
       .image-wrapper {
         height: auto;
-        margin-bottom: $grid-gutter-width / 4;
+        margin-top: $grid-gutter-width;
+
+        &:first-child {
+          margin-top: 0;
+        }
 
         img {
           max-width: 100%;
@@ -44,6 +48,8 @@
       .image-details {
         padding: 0;
         margin-bottom: $grid-gutter-width;
+        margin-top: $grid-gutter-width / 2;
+        width: auto;
 
         .caption {
           margin-bottom: $grid-gutter-width / 4;

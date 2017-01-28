@@ -36,3 +36,28 @@
   background-size: cover;
   cursor: pointer;
 }
+
+@media screen and (max-width: $screen-xs-max) {
+  .items-container {
+    display: block;
+    width: 100%;
+
+    .items {
+      float: none;
+
+      &:first-child {
+        .img-setting {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .img-setting {
+      display: block;
+      margin: 0 auto;
+      width: 280px;
+      height: 250px;
+      margin-top: $grid-gutter-width * 1.5;
+    }
+  }
+}
