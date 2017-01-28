@@ -7,9 +7,9 @@ import {
   SET_VISIBILITY_FILTER,
   FETCH_BY_VISIBILITY_FILTER,
   fetchByVisibilityFilter,
-  receiveRows,
+  receiveResponse,
   receiveItem,
-  clearRows,
+  clear,
 } from './actions';
 import {goTo, openUrl, reload} from '../navigation/actions';
 import {setNotification, flashNotification, removeNotification} from '../notifications/actions';
@@ -38,8 +38,8 @@ function* watchDetailFetches() {
  */
 function* handleFetchByVisibilityFilter({payload}) {
   try {
-    const data = yield api.fetchByVisibilityFilter(payload);
-    yield put(receiveRows(data));
+    const response = yield api.fetchByVisibilityFilter(payload);
+    yield put(receiveResponse(response));
   } catch (er) {
     console.warn(er);
   }
@@ -51,7 +51,7 @@ function* watchVisibilityFilterFetches() {
 
 function* watchVisibilityFilters() {
   yield* takeLatest(SET_VISIBILITY_FILTER, function* ({payload}) {
-    yield put(clearRows());
+    yield put(clear());
     yield put(fetchByVisibilityFilter(payload));
     yield put(goTo('images'));
   });

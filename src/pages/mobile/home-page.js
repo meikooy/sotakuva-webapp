@@ -6,7 +6,7 @@ import Page from '../../components/layout/page';
 export default class MobileHomePage extends Component {
   render() {
     return (
-      <Page modifierClasses="faded,home" {...this.props}>
+      <Page modifierClasses="home" {...this.props}>
         <HomeContainer />
       </Page>
     );

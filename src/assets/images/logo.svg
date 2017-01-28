@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="194px" height="52px" viewBox="0 0 194 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="192px" height="50px" viewBox="0 0 192 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
     <title>logo</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M0,18 C0,18 33.9627354,7 50,7 C66.0372646,7 0,18 0,18 Z" id="path-1"></path>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-2" y="-2" width="56.5107153" height="15">
-            <rect x="-2" y="5" width="56.5107153" height="15" fill="white"></rect>
-            <use xlink:href="#path-1" fill="black"></use>
-        </mask>
-        <path d="M17,-1.77635684e-15 C17,-1.77635684e-15 17.2033792,20.3682353 23,29 C21.204005,2.47352941 17,-1.77635684e-15 17,-1.77635684e-15 Z" id="path-3"></path>
-        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-2" y="-2" width="10" height="33">
-            <rect x="15" y="-2" width="10" height="33" fill="white"></rect>
-            <use xlink:href="#path-3" fill="black"></use>
-        </mask>
-    </defs>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="list" transform="translate(-597.000000, -48.000000)">
+        <g id="list" transform="translate(-599.000000, -50.000000)">
             <g id="logo" transform="translate(599.000000, 50.000000)">
                 <path d="M50.537,50 L46.109,50 C45.289,50 44.838,47.499 44.838,45.777 L44.838,40.324 C44.838,39.627 44.469,38.889 43.731,38.889 L42.501,38.889 L42.501,50 L37.212,50 L37.212,22.694 L44.51,22.694 C47.093,22.694 49.758,24.334 49.758,27.983 L49.758,33.436 C49.758,34.789 48.938,36.019 47.585,36.798 C48.938,37.536 49.84,38.807 49.84,40.16 L49.84,45.449 C49.84,47.171 50.168,48.565 50.537,49.877 L50.537,50 Z M44.715,33.6 L44.715,28.352 C44.715,27.45 44.387,27.122 43.813,27.122 L42.501,27.122 L42.501,34.83 L43.813,34.83 C44.387,34.83 44.715,34.502 44.715,33.6 Z M59.223,50 L59.223,22.694 L53.934,22.694 L53.934,50 L59.223,50 Z M77.134,50 L77.134,22.694 L72.542,22.694 L72.542,37.741 L71.435,33.887 L68.278,22.694 L63.44,22.694 L63.44,50 L68.073,50 L68.073,34.994 L69.303,38.807 L72.788,50 L77.134,50 Z M93.2,27.491 L93.2,22.694 L80.408,22.694 L80.408,27.491 L84.18,27.491 L84.18,50 L89.428,50 L89.428,27.491 L93.2,27.491 Z M109.307,50 L104.018,50 L103.649,45.613 L100.533,45.613 L100.082,50 L95.326,50 L99.303,22.694 L105.371,22.694 L109.307,50 Z M103.198,41.349 L102.296,30.73 L101.107,41.349 L103.198,41.349 Z M130.744,50 L130.744,22.694 L123.938,22.694 L122.298,33.395 L121.683,38.93 L121.068,33.395 L119.387,22.694 L112.458,22.694 L112.458,50 L117.091,50 L117.091,30.402 L117.87,36.88 L119.592,50 L122.954,50 L124.84,36.88 L125.701,30.402 L125.701,50 L130.744,50 Z M147.794,50 L142.505,50 L142.136,45.613 L139.02,45.613 L138.569,50 L133.813,50 L137.79,22.694 L143.858,22.694 L147.794,50 Z M141.685,41.349 L140.783,30.73 L139.594,41.349 L141.685,41.349 Z M161.728,50 L161.728,45.326 L156.193,45.326 L156.193,22.694 L150.945,22.694 L150.945,50 L161.728,50 Z M175.867,50 L175.867,45.326 L170.332,45.326 L170.332,22.694 L165.084,22.694 L165.084,50 L175.867,50 Z M192.015,50 L186.726,50 L186.357,45.613 L183.241,45.613 L182.79,50 L178.034,50 L182.011,22.694 L188.079,22.694 L192.015,50 Z M185.906,41.349 L185.004,30.73 L183.815,41.349 L185.906,41.349 Z" id="RINTAMALLA" fill="#1D1D1D"></path>
-                <g id="Group-2">
-                    <g id="Path-2">
-                        <use fill="#2520BC" fill-rule="evenodd" xlink:href="#path-1"></use>
-                        <use stroke="#2520BC" mask="url(#mask-2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" xlink:href="#path-1"></use>
-                    </g>
-                    <g id="Path-3">
-                        <use fill="#2520BC" fill-rule="evenodd" xlink:href="#path-3"></use>
-                        <use stroke="#2520BC" mask="url(#mask-4)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" xlink:href="#path-3"></use>
-                    </g>
+                <g id="Group-2" fill="#2520BC">
+                    <path d="M0,18 C0,18 33.9627354,7 50,7 C66.0372646,7 6.52832031,21.7099609 0,18 Z" id="Path-2"></path>
+                    <path d="M17,-1.77635684e-15 C17,-1.77635684e-15 17,22.7490234 23,29 C25.0517578,13.8945312 17,-1.77635684e-15 17,-1.77635684e-15 Z" id="Path-3"></path>
                 </g>
             </g>
         </g>

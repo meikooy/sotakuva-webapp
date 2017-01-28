@@ -4,6 +4,7 @@ import {createVisibilityFilter} from './helpers';
 export default {
   loaded: false,
   byId: {},
+  meta: {},
 
   active: {
     loaded: false,

@@ -6,8 +6,8 @@ import {over, set} from '../../helpers/lens';
 import initialState from './initial-state';
 import {
   OPEN,
-  CLEAR_ROWS,
-  RECEIVE_ROWS,
+  CLEAR,
+  RECEIVE_RESPONSE,
   RECEIVE_ITEM,
   SET_VISIBILITY_FILTER,
 } from './actions';
@@ -20,13 +20,15 @@ export default function images(state = initialState, {payload, type}) {
 
     case RECEIVE_ITEM: return set(`byId.${payload.id}`, payload, state);
 
-    case RECEIVE_ROWS: return pipe(
-      over('byId', old => ({...old, ...normalize(payload)})),
+    case RECEIVE_RESPONSE: return pipe(
+      set('byId', normalize(payload.hits)),
+      set('meta', omit(['hits'], payload)),
       set('loaded', true)
     )(state);
 
-    case CLEAR_ROWS: return pipe(
+    case CLEAR: return pipe(
       set('byId', {}),
+      set('meta', {}),
       set('loaded', false)
     )(state);
 
