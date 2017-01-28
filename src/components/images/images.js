@@ -6,8 +6,11 @@ import scrolltop from 'scrolltop';
 
 const triggerOffset = 100;
 
-const getImgStyle = img =>
-  ({backgroundImage: `url(https://api.rintamalla.fi/images/${img.objectID}/file?size=thumbnail)`});
+const getImgStyle = img => ({
+  background:
+     `url("https://api.rintamalla.fi/images/${img.objectID}/file?size=thumbnail") center center / cover no-repeat, `
+    + 'url("/images/loader.gif") center center / 80px auto no-repeat'
+});
 
 
 export default class Images extends Component {
