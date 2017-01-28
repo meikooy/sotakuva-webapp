@@ -4,7 +4,11 @@
   "description": "Rintamalla",
   "main": "src/index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "postinstall": "make build"
+  },
+  "engines": {
+    "node": ">6.0.0"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,7 @@
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
     "color-hash": "^1.0.3",
+    "express": "^4.14.0",
     "font-awesome": "^4.7.0",
     "js-cookie": "^2.1.3",
     "ramda": "^0.22.1",
@@ -34,9 +39,7 @@
     "redux-logger": "^2.7.4",
     "redux-saga": "^0.13.0",
     "reselect": "^2.5.4",
-    "signature_pad": "1.5.3"
-  },
-  "devDependencies": {
+    "signature_pad": "1.5.3",
     "babel": "^6.5.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
