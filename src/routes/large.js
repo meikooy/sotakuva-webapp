@@ -11,7 +11,7 @@ export default (
   <Route path='/' component={RootPage}>
     <IndexRoute component={HomePage} />
 
-    <Route name='images' path='images' component={ImagesPage}>
+    <Route name='images' path='kuvat' component={ImagesPage}>
       <Route name='detail' path=':id' component={ImageDetailPage} />
     </Route>
   </Route>
