@@ -10,7 +10,6 @@ class Container extends Component {
 
   componentDidMount() {
     const {params, load} = this.props;
-    console.log(this.props.params);
     load();
 
     window.onkeyup = key => {

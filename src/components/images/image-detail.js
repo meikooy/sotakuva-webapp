@@ -15,6 +15,11 @@ export default class ImageDetail extends Component {
     this.state = {loading: true};
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      document.body.scrollTop = 0;
+    }, 200);
+  }
 
   componentWillReceiveProps(nextProps) {
     if (!this.state.loading) return;
