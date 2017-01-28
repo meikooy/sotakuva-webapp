@@ -39,9 +39,7 @@
     "redux-logger": "^2.7.4",
     "redux-saga": "^0.13.0",
     "reselect": "^2.5.4",
-    "signature_pad": "1.5.3"
-  },
-  "devDependencies": {
+    "signature_pad": "1.5.3",
     "babel": "^6.5.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
