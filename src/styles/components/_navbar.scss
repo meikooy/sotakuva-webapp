@@ -63,6 +63,11 @@ nav#navbar.navbar {
     display:flex;
     justify-content:center;
     margin-left: 0px;
+
+    @media screen and (max-width: $screen-xs-max) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   .navbar-collapse {
