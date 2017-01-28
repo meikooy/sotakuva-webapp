@@ -32,7 +32,7 @@ export default class MainNavbar extends Component {
     return (
       <Navbar id="navbar" fluid>
 
-        <ul className="nav navbar-nav">
+        <ul className="nav navbar-nav hidden-xs">
           {Object.keys(eras).map(n => Number(n)).map(n =>
             <EraFilter key={n} title={eras[n]} era={n} {...linkProps} />
           )}
@@ -46,7 +46,25 @@ export default class MainNavbar extends Component {
           </Navbar.Brand>
         </Navbar.Header>
 
-        <div className="navbar-right">
+        <div className="mobile-nav-container hidden-sm hidden-md hidden-lg">
+          <ul className="nav navbar-nav">
+            {Object.keys(eras).map(n => Number(n)).map(n =>
+              <EraFilter key={n} title={eras[n]} era={n} {...linkProps} />
+            )}
+          </ul>
+
+          <div className="navbar-right hidden-xs hidden-sm hidden-md hidden-lg">
+
+            <Navbar.Form pullLeft>
+              <SearchInput
+                onSubmit={onSearchSubmit}
+                initialValues={{search: searchText}} />
+            </Navbar.Form>
+
+          </div>
+        </div>
+
+        <div className="navbar-right hidden-xs">
 
           <Navbar.Form pullLeft>
             <SearchInput

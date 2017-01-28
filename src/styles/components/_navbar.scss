@@ -34,8 +34,29 @@ nav#navbar.navbar {
     position: relative;
 
     @media screen and (max-width: $screen-xs-max) {
-      padding: 0 $grid-gutter-width / 4;
+      display: block;
+      padding: $grid-gutter-width / 2 $grid-gutter-width / 4 0;
     }
+  }
+
+  .mobile-nav-container {
+    display: block;
+
+    ul.navbar-nav {
+      margin: 0 auto;
+      display: table;
+
+      li {
+        a {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .navbar-form {
+      margin: 0;
+    }
+
   }
 
   .navbar-header {
@@ -154,6 +175,10 @@ nav#navbar.navbar {
         text-transform: uppercase;
         transition: all 0.2s ease;
         box-shadow: none;
+
+        @media screen and (max-width: $screen-xs-max) {
+          padding: 3px 5px;
+        }
 
         &:hover {
           color: $navbar-text-color-hover;
