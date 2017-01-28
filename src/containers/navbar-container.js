@@ -10,11 +10,19 @@ import {getActiveFilter} from '../modules/images/selectors';
 
 
 function mapStateToProps(state, props) {
-  const {location} = props;
+  const {location, routes} = props;
+
+  const routesWithoutPath = routes.filter(route => {
+    return !!route.path;
+  });
+
+  const isRoot = routesWithoutPath.length === 1;
+  console.log(routes);
 
   return {
     searchText: getSearchText(state) || location.query.search || '',
     activeFilter: getActiveFilter(state),
+    showNavigation: !isRoot
   };
 }
 
