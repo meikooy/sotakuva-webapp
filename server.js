@@ -7,11 +7,9 @@ const PUBLIC_DIR = `${__dirname}/dist`;
 
 // Redirect to non www
 app.get('/*', function(req, res, next) {
+	console.log('https://' + req.hostname + req.url);
 	if (req.headers.host.match(/^www/) !== null ) {
 		res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-	} 
-	else if (!req.secure) {
-		res.redirect('https://' + req.hostname + req.url);
 	}
 	else {
 		next();
