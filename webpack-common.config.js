@@ -5,8 +5,9 @@ import HtmlPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import pkg from './package.json';
 
+const env = process.env.NODE_ENV === 'production' ? process.env : dotenv.load();
 const envVars = {
-  ...dotenv.load(),
+  ...env,
   APP_VERSION: pkg.version
 };
 
