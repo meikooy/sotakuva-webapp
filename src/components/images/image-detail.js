@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import Icon from '../icon';
 
-const getImgUrl = img =>
-  `https://api.rintamalla.fi/images/${img.objectID}/file?size=large`;
+const getImgUrl = (img, size) =>
+  `https://api.rintamalla.fi/images/${img.objectID}/file?size=${size}`;
 const getWrapperStyle = img => ({
   backgroundImage: `url(${getImgUrl(img)})`
 });
@@ -39,9 +39,9 @@ export default class ImageDetail extends Component {
 
     return (
       <div className="image-container">
-        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
+        <div className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image, 'large')}>
           {this.state.loading && <Icon name="spinner" spin />}
-          {!this.state.loading && isMobile && <img src={getImgUrl(image)} />}
+          {!this.state.loading && isMobile && <img src={getImgUrl(image, 'thumbnail')} />}
         </div>
         <div className="image-details">
           <p className="caption">{image.caption || '-'}</p>
