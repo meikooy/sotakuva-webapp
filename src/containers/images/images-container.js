@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Component from '../../components/images/images';
+import Images from '../../components/images/images';
 import {goTo, replace} from '../../modules/navigation/actions';
 import {
   getImages,
@@ -8,8 +8,19 @@ import {
   getMeta,
   areWeLoadingMore
 } from '../../modules/images/selectors';
-import {open, loadMore} from '../../modules/images/actions';
+import {open, loadMore, setVisibilityFilter} from '../../modules/images/actions';
+import {initialVisibilityFilter} from '../../modules/images/initial-state';
 
+class Container extends Component {
+
+  componentDidMount() {
+    this.props.load();
+  }
+
+  render() {
+    return <Images {...this.props} />;
+  }
+}
 
 function mapStateToProps(state) {
   return {
@@ -28,9 +39,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     loadMore() {
       dispatch(loadMore());
+    },
+    load() {
+      dispatch(setVisibilityFilter(initialVisibilityFilter));
     }
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(Container);

@@ -1,4 +1,7 @@
 import {createVisibilityFilter} from './helpers';
+import {eras} from './dict';
+
+export const initialVisibilityFilter = {name: 'era', params: {era: 1, title: eras[1]}};
 
 /*eslint max-len: 0*/
 export default {
@@ -12,5 +15,5 @@ export default {
     id: null
   },
 
-  visibilityFilter: null,
+  visibilityFilter: initialVisibilityFilter,
 };
