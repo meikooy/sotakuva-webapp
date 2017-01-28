@@ -1,34 +1,3 @@
-.page.page-images {
-  .image-grid {
-    padding-bottom: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    .img.img-thumb {
-      height: 350px;
-      width: 350px;
-      margin: 5px;
-      background: $gray-lighter;
-      position: relative;
-
-      .caption {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        padding: 10px 20px;
-        color: #fff;
-        line-height: 1.3;
-        font-family: $headings-font-family;
-        font-size: 13px;
-        background: rgba(0,0,0,0.5);
-      }
-    }
-  }
-}
-
 .page.page-images-detail {
 
   .image-container {
@@ -47,14 +16,12 @@
   }
 
   .image-details {
-    width: 300px;
-    padding-left: 15px;
+    width: 340px;
+    padding-left: 30px;
     flex-shrink: 0;
 
     .caption {
-      margin-bottom: 30px;
-      font-size: 20px;
-      font-weight: 600;
+      margin-top: -5px;
     }
   }
 }

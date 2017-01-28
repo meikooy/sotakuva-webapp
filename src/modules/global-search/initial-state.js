@@ -1,4 +1,7 @@
 export default {
   fetching: false,
-  searchResults: null
+  loadingMore: false,
+  searched: false,
+  searchResults: {},
+  meta: {}
 };

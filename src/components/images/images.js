@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
-import {findDOMNode} from 'react-dom';
 import Icon from '../icon';
 import scrolltop from 'scrolltop';
+import ImageGrid from './image-grid';
 
 
 const triggerOffset = 100;
@@ -47,24 +47,7 @@ export default class Images extends Component {
     return (
       <div>
         {!imagesLoaded && <Icon name="spinner" spin />}
-        {!!imagesLoaded &&
-          <div className="image-grid" ref="list">
-            {Object.values(images).map(img =>
-              <div
-                className="img img-thumb"
-                id={img.objectID}
-                style={getImgStyle(img)}
-                key={img.objectID}
-                onClick={_ => open(img)}>
-
-                  <div className="caption">
-                    <span>{img.caption.length > 90 ? img.caption.substr(0, 90) + '...' : img.caption}</span>
-                  </div>
-
-              </div>
-            )}
-          </div>
-        }
+        {!!imagesLoaded && <ImageGrid ref="list" images={Object.values(images)} onImageClick={open} />}
       </div>
     );
   }

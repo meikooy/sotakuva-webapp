@@ -31,10 +31,10 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, {location}) => {
   return {
     open(image) {
-      dispatch(replace(`/kuvat#${image.objectID}`));
+      dispatch(replace(`/${location.pathname}${location.search}#${image.objectID}`));
       dispatch(open(image.objectID));
     },
     loadMore() {

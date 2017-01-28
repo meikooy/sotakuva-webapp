@@ -111,6 +111,14 @@ p {
     font-size: $font-size-base;
   }
 
+  strong {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    color: $gray-darker;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
   &.lead {
     font-weight: 400;
     font-size: $font-size-lead;

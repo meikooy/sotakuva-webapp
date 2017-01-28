@@ -43,17 +43,27 @@ export default class ImageDetail extends Component {
           {!this.state.loading && isMobile && <img src={getImgUrl(image, 'thumbnail')} />}
         </a>
         <div className="image-details">
-          <p className="caption">{image.caption || '-'}</p>
-          <h5>Päiväys: {image.date
-            ? new Date(image.date * 1000)
-            .toLocaleString('fi-FI', {day: 'numeric', month: 'numeric', year: 'numeric'})
-            : '-'}</h5>
-
-          <h5>Kuvaaja: {image.author || '-'}</h5>
-
-          <h5>Paikka: {image.place || '-'}</h5>
-
-          <h5>Lähde: {image.source || '-'}</h5>
+          {!!image.caption && <p className="caption">{image.caption}</p>}
+          {!!image.date &&
+            <p>
+              <strong>Päiväys:</strong><br />
+              {new Date(image.date * 1000).toLocaleString('fi-FI', {day: 'numeric', month: 'numeric', year: 'numeric'})}
+            </p>}
+          {!!image.author &&
+            <p>
+              <strong>Kuvaaja:</strong><br />
+              {image.author}
+            </p>}
+          {!!image.palce &&
+          <p>
+            <strong>Paikka:</strong><br />
+            {image.place}
+          </p>}
+          {!!image.source &&
+          <p>
+            <strong>Lähde:</strong><br />
+            {image.source}
+          </p>}
         </div>
       </div>
     );

@@ -27,8 +27,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       const val = attributes.search;
 
       if (val.length) {
+        const filter = createVisibilityFilter('search', {search: val, page: 0});
+        dispatch(setVisibilityFilter(filter));
         dispatch(navigate(`/haku?search=${attributes.search}`));
-        dispatch(search(attributes.search));
       }
     },
     activateEra(params) {
