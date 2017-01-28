@@ -1,0 +1,25 @@
+.front-text-panel {
+  box-shadow: #eee 2px 5px 10px;
+  text-align: center;
+  float: auto;
+  margin: auto;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -30px;
+  width: 200px;
+  background-color: #fff;
+  vertical-align: middle;
+  font-family: $headings-font-family;
+}
+
+.items {
+  float: left;
+  position: relative;
+}
+
+.img-setting {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+}
