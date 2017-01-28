@@ -21,7 +21,10 @@ export default function images(state = initialState, {payload, type}) {
 
     case OPEN: return set('active', {loaded: false, id: payload}, state);
 
-    case RECEIVE_ITEM: return set(`byId.${payload.id}`, payload, state);
+    case RECEIVE_ITEM: return pipe(
+      set(`byId.${payload.objectID}`, payload),
+      set('active', {id: payload.objectID, loaded: true})
+      )(state);
 
     case RECEIVE_RESPONSE: return pipe(
       set('byId', normalize(payload.hits)),

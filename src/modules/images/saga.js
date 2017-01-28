@@ -26,7 +26,9 @@ import {createVisibilityFilter} from './helpers';
 function* handleFetchDetail({payload}) {
   try {
     const data = yield api.fetchById(payload);
-    yield put(receiveItem(data));
+    const image = data.hits[0];
+    if (!image) throw new Error('No image found!');
+    yield put(receiveItem(image));
   } catch (er) {
     console.warn(er);
   }

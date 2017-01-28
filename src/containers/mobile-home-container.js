@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Component from '../components/home';
 import {goTo} from '../modules/navigation/actions';
 
 
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)();
+export default connect(mapStateToProps, mapDispatchToProps)(Component);

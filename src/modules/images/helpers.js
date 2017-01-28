@@ -17,9 +17,11 @@ export const createVisibilityFilter = (name, params) => {
 };
 
 export const createQueryFromVisibilityFilter = filter => {
+  const paramsBase = {hitsPerPage: 24, page: filter.params.page || 0};
+
   switch (filter.name) {
-    case 'era': return {search: null, params: {filters: `era=${filter.params.era}`, page: filter.params.page || 0}};
-    case 'search': return {search: filter.search, params: {page: filter.params.page || 0}};
+    case 'era': return {search: null, params: {filters: `era=${filter.params.era}`, ...paramsBase}};
+    case 'search': return {search: filter.search, params: paramsBase};
   }
 
   return {};

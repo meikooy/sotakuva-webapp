@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, IndexRedirect} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
 import RootPage from '../pages/mobile/root';
 import HomePage from '../pages/mobile/home-page';
@@ -10,7 +10,8 @@ export default (
   <Route path='/' component={RootPage}>
     <IndexRoute component={HomePage} />
 
-    <Route name='images' path='kuvat' component={ImagesPage}>
+    <Route name='images' path='kuvat'>
+      <IndexRoute component={ImagesPage} />
     </Route>
   </Route>
 );

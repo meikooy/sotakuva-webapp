@@ -10,7 +10,21 @@
       height: 350px;
       width: 350px;
       margin: 5px;
-      background-color: $gray-lighter;
+      background: $gray-lighter;
+      position: relative;
+
+      .caption {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        padding: 10px 20px;
+        color: #fff;
+        line-height: 1.3;
+        font-family: $headings-font-family;
+        font-size: 13px;
+        background: rgba(0,0,0,0.5);
+      }
     }
   }
 }
@@ -41,6 +55,39 @@
       margin-bottom: 30px;
       font-size: 20px;
       font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  .page.page-images-detail {
+    .image-container {
+      display: block;
+
+      .image-wrapper {
+        height: auto;
+        margin-bottom: $grid-gutter-width / 4;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .image-details {
+        padding: 0;
+        margin-bottom: $grid-gutter-width;
+
+        .caption {
+          margin-bottom: $grid-gutter-width / 4;
+          font-size: 15px
+        }
+
+        h5 {
+          font-size: 14px;
+          padding-top: 0;
+        }
+      }
     }
   }
 }

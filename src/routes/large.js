@@ -10,10 +10,7 @@ import ImageDetailPage from '../pages/image-detail-page';
 export default (
   <Route path='/' component={RootPage}>
     <IndexRoute component={HomePage} />
-
-
-    <Route name="terms" path="terms" component={TermsPage}>
-    </Route>
+    <Route name="terms" path="terms" component={TermsPage} />
 
     <Route name='images' path='kuvat'>
       <IndexRoute component={ImagesPage} />

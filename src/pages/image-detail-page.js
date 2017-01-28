@@ -7,7 +7,7 @@ export default class ImageDetailPage extends Component {
   render() {
     return (
       <Page {...this.props}>
-        <ImageDetailContainer />
+        <ImageDetailContainer {...this.props} />
       </Page>
     );
   }

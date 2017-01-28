@@ -9,16 +9,8 @@ const PUBLIC_DIR = `${__dirname}/dist`;
 app.get('/*', function(req, res, next) {
 	if (req.headers.host.match(/^www/) !== null ) {
 		res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-	} else {
-		next();
 	}
-});
-
-// Redirect to https
-app.get('/*', function(req, res, next) {
-	if (!req.secure) {
-		res.redirect('https://' + req.hostname + req.url);
-	} else {
+	else {
 		next();
 	}
 });
