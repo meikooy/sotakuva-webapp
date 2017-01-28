@@ -25,6 +25,10 @@ nav#navbar.navbar {
     padding-top: 0px;
   }
 
+  .opaque {
+    opacity: 0;
+  }
+
   .container,
   .container-fluid {
     display: flex;

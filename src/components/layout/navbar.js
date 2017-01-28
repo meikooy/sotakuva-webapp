@@ -25,7 +25,8 @@ export default class MainNavbar extends Component {
       onLogoClick,
       onSearchSubmit,
       onSearchInput,
-      activateEra
+      activateEra,
+      showNavigation,
     } = this.props;
 
     const linkProps = {activeFilter, onClick: activateEra};
@@ -33,7 +34,7 @@ export default class MainNavbar extends Component {
     return (
       <Navbar id="navbar" fluid>
 
-        <ul className="nav navbar-nav hidden-xs">
+        <ul className={cn({'nav': true, 'navbar-nav': true, 'hidden-xs': true, 'opaque': !showNavigation})}>
           {Object.keys(eras).map(n => Number(n)).map(n =>
             <EraFilter key={n} title={eras[n]} era={n} {...linkProps} />
           )}

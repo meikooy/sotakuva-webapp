@@ -1,16 +1,21 @@
+
 .front-text-panel {
-  box-shadow: #eee 2px 5px 10px;
+  box-shadow: #eee 0px 5px 5px;
   text-align: center;
-  float: auto;
   margin: auto;
   position: absolute;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: -30px;
   width: 200px;
   background-color: #fff;
   vertical-align: middle;
   font-family: $headings-font-family;
+  cursor: pointer;
+
+  h3 {
+    margin-bottom: $grid-gutter-width / 2;
+  }
 }
 
 .items {
@@ -18,8 +23,16 @@
   position: relative;
 }
 
+.items-container {
+  display: flex;
+  justify-content: center;
+}
+
 .img-setting {
   margin: 5px;
   width: 300px;
   height: 300px;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
 }
