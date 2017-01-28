@@ -21,9 +21,11 @@ export default class Images extends Component {
             style={getImgStyle(img)}
             key={img.objectID}
             onClick={_ => onImageClick(img)}>
-            <div className="caption">
+            {img.caption
+              && img.caption.length > 0
+              && <div className="caption">
               <span>{img.caption.length > 90 ? img.caption.substr(0, 90) + '...' : img.caption}</span>
-            </div>
+            </div>}
           </div>
         )}
       </div>
