@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Icon from '../icon';
 
 const getImgUrl = img =>
-  `https://sotakuva-api.herokuapp.com/images/${img.objectID}/file?size=large`;
+  `https://api.rintamalla.fi/images/${img.objectID}/file?size=large`;
 const getWrapperStyle = img => ({
   backgroundImage: `url(${getImgUrl(img)})`
 });

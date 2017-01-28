@@ -7,7 +7,7 @@ import scrolltop from 'scrolltop';
 const triggerOffset = 100;
 
 const getImgStyle = img =>
-  ({backgroundImage: `url(https://sotakuva-api.herokuapp.com/images/${img.objectID}/file?size=thumbnail)`});
+  ({backgroundImage: `url(https://api.rintamalla.fi/images/${img.objectID}/file?size=thumbnail)`});
 
 
 export default class Images extends Component {
