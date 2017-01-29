@@ -16,9 +16,6 @@ const getImgStyle = img => ({
 export default class Images extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll.bind(this));
-    if (this.props.images.visibilityFilter) {
-      console.log('vittu ei oo filtteriä!');
-    }
   }
 
   componentWillUnmount() {
