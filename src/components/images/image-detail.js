@@ -39,11 +39,9 @@ export default class ImageDetail extends Component {
 
   render() {
     const {image} = this.props;
-
-    const era = eras[image.era];
-
     if (!image) return null;
 
+    const era = eras[image.era];
     return (
       <div className="image-container">
         <a href={getImgUrl(image, 'large')} target="_blank" className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
