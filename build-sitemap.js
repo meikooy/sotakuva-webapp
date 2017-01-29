@@ -4,6 +4,7 @@ const Image = require('./image.js');
 const mongoose = require('mongoose');
 const sm = require('sitemap');
 const fs = require('fs');
+const _ = require('lodash');
 
 const SRC_DIR = `${__dirname}/src`;
 
@@ -17,25 +18,37 @@ mongoose.Promise = global.Promise;
 const urls = [];
 
 
-Image.where().select(['_id', 'caption']).limit(200000).then(images => {
-	images.forEach(image => {
-		urls.push({
-			url: `/kuvat/${image._id}`,
-			img: [
-				{
-					url: `https://api.rintamalla.fi/images/${image._id}/file?size=large`,
-					caption: image.caption
-				}
-			]
-		});
-	});
+Image.count().then(c => {
+	console.log('Found ' + c + ' images');
+	const perPage = 50000;
+	const pages = Math.ceil(c / perPage);
 
-	sitemap = sm.createSitemap ({
-		hostname: 'https://rintamalla.fi',
-		urls: urls
-	});
+	console.log('Found ' + pages + ' pages');
 
-	fs.writeFileSync(SRC_DIR + '/assets/sitemap.xml', sitemap.toString());
-	console.log('DONE!');
+	_.times(pages, function(i) {
+		console.log('Find ' + i);
+		Image.where().select(['_id', 'caption']).skip(i * perPage).limit(perPage).then(images => {
+			images.forEach(image => {
+				urls.push({
+					url: `/kuvat/${image._id}`,
+					img: [
+						{
+							url: `https://api.rintamalla.fi/images/${image._id}/file?size=large`,
+							caption: image.caption
+						}
+					]
+				});
+			});
+
+			const sitemap = sm.createSitemap ({
+				hostname: 'https://rintamalla.fi',
+				urls: urls
+			});
+
+			fs.writeFileSync(SRC_DIR + '/assets/sitemap-'+i+'.xml', sitemap.toString());
+			console.log('DONE! ' + i);
+
+		}, console.log);
+	});
 
 }, console.log);

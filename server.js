@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3001;
 const PUBLIC_DIR = `${__dirname}/dist`;
 
+require('dotenv').load();
+
 if (!String.prototype.splice) {
   String.prototype.splice = function(start, delCount, newSubStr) {
     return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));

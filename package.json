@@ -54,6 +54,7 @@
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^17.0.3",
+    "lodash": "^4.17.4",
     "mongoose": "^4.8.0",
     "node-sass": "^3.13.0",
     "parallelshell": "^2.0.0",
