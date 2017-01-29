@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Icon from '../icon';
+import {eras} from '../../modules/images/dict';
 
 const getImgUrl = (img, size) =>
   `https://api.rintamalla.fi/images/${img.objectID}/file?size=${size}`;
@@ -39,6 +40,8 @@ export default class ImageDetail extends Component {
   render() {
     const {image} = this.props;
 
+    const era = eras[image.era];
+
     if (!image) return null;
 
     return (
@@ -49,6 +52,10 @@ export default class ImageDetail extends Component {
         </a>
         <div className="image-details">
           {!!image.caption && <p className="caption">{image.caption}</p>}
+          <p>
+              <strong>Aikakausi</strong><br />
+              {era}
+          </p>
           {!!image.date &&
             <p>
               <strong>Päiväys:</strong><br />
