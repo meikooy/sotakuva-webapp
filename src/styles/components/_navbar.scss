@@ -23,6 +23,23 @@ nav#navbar.navbar {
 
   @media screen and (max-width: $screen-xs-max) {
     padding-top: 0px;
+
+    .navbar-form {
+      display: inline-block;
+      width: 70%;
+      margin: 0 auto $grid-gutter-width / 2;
+
+      .input-group.global-search {
+        box-shadow: $gray-dark 0px 3px 0px;
+
+        .form-control {
+          width: 140px;
+          box-shadow: none !important;
+          @include placeholder($gray-light);
+        }
+      }
+    }
+
   }
 
   .opaque {

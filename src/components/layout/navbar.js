@@ -66,7 +66,7 @@ export default class MainNavbar extends Component {
           </div>
         </div>
 
-        <div className="navbar-right hidden-xs">
+        <div className="navbar-right">
 
           <Navbar.Form pullLeft>
             <SearchInput
