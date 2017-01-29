@@ -15,9 +15,6 @@ mongoose.Promise = global.Promise;
 
 
 // Load all images and build sitemap.xml
-const urls = [];
-
-
 Image.count().then(c => {
 	console.log('Found ' + c + ' images');
 	const perPage = 50000;
@@ -26,8 +23,9 @@ Image.count().then(c => {
 	console.log('Found ' + pages + ' pages');
 
 	_.times(pages, function(i) {
-		console.log('Find ' + i);
 		Image.where().select(['_id', 'caption']).skip(i * perPage).limit(perPage).then(images => {
+			const urls = [];
+			
 			images.forEach(image => {
 				urls.push({
 					url: `/kuvat/${image._id}`,
@@ -40,6 +38,7 @@ Image.count().then(c => {
 				});
 			});
 
+			
 			const sitemap = sm.createSitemap ({
 				hostname: 'https://rintamalla.fi',
 				urls: urls
