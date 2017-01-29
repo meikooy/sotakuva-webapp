@@ -50,6 +50,7 @@ export default class ImageDetail extends Component {
         </a>
         <div className="image-details">
           {!!image.caption && <p className="caption">{image.caption}</p>}
+          {!!image.description && <p><strong>Lisätietoa</strong><br/>{image.description}</p>}
           <p>
               <strong>Aikakausi</strong><br />
               {era}
