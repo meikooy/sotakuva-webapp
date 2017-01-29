@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
+const Image = require('./image.js');
 const app = express();
+const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 3001;
 const PUBLIC_DIR = `${__dirname}/dist`;
@@ -10,6 +12,10 @@ if (!String.prototype.splice) {
     return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
   };
 }
+
+// Connect mongoose
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.Promise = global.Promise;
 
 // Redirect to non www
 app.get('/*', function(req, res, next) {
@@ -22,15 +28,22 @@ app.get('/*', function(req, res, next) {
 });
 
 // Set meta tags for images
-app.get('/kuvat/:id', function(req, res, next) {
+app.get('/kuvat/:id', function(req, res) {
   const {id} = req.params;
   var html = fs.readFileSync(PUBLIC_DIR + '/index.html').toString();
 
-  // Append og:image and og:description after </title>
-  const ogImage = `<meta name="og:image" content="https://api.rintamalla.fi/images/${id}/file?size=large" />`;
-  html = html.splice(html.indexOf('</title>') + 8, 0, ogImage);
+  // Fetch image data
+  Image.findById(id, (error, image) => {
+  	console.log(image);
+  	const ogImage = `<meta name="og:image" content="https://api.rintamalla.fi/images/${id}/file?size=large" />`;
+  	var ogDescription = '';
+  	if (!error) {
+		ogDescription = `<meta name="og:description" content="${image.caption}" />`;
+  	}
 
-  return res.set('Content-Type', 'text/html').send(html);
+  	html = html.splice(html.indexOf('</title>') + 8, 0, ogImage + ogDescription);
+	res.set('Content-Type', 'text/html').send(html);
+  });
 });
 
 // Redirect all routes without extension to the index.html
