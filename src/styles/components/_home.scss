@@ -26,6 +26,8 @@
 .items-container {
   display: flex;
   justify-content: center;
+
+  margin-bottom: $grid-gutter-width * 2;
 }
 
 .img-setting {
