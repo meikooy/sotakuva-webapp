@@ -42,6 +42,7 @@ export default class ImageDetail extends Component {
     if (!image) return null;
 
     const era = eras[image.era];
+    const detailsLink = `http://sa-kuva.fi/neo?tem=webneo_image_large&lang=FIN&imgid=${image.sa_id}&docid=7aa7d352216b0553;&ddocid=7aa7d352216b0553&archive=`;
     return (
       <div className="image-container">
         <a href={getImgUrl(image, 'large')} target="_blank" className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
@@ -73,7 +74,7 @@ export default class ImageDetail extends Component {
           {!!image.source &&
           <p>
             <strong>Lähde:</strong><br />
-            {image.source}
+            <a target="blank" href={detailsLink}>{image.source}</a>
           </p>}
         </div>
       </div>
