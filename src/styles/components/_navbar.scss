@@ -29,6 +29,7 @@ nav#navbar.navbar {
   }
 
   @media screen and (max-width: $screen-xs-max) {
+    position: absolute;
     padding-top: 0px;
 
     .navbar-form {
