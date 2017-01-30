@@ -153,6 +153,7 @@ nav#navbar.navbar {
       margin-right: 6px;
       display: inline-block;
       margin-bottom: 18px;
+      margin-left: 18px;
     }
 
     span {
@@ -166,6 +167,7 @@ nav#navbar.navbar {
       img {
         height: $navbar-logo-height * 0.85;
         width: auto;
+        margin-left: 18px;
       }
 
       span {
