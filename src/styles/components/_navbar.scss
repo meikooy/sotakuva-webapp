@@ -1,10 +1,11 @@
 nav#navbar.navbar {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
   padding-top: $navbar-offset-top;
+  padding-bottom: 10px;
   padding-left: 0px;
   padding-right: 0px;
   z-index: 1000;
@@ -12,6 +13,12 @@ nav#navbar.navbar {
   font-size: $navbar-text-size;
   border-radius: 0px;
   font-family: $headings-font-family;
+  box-shadow: rgba(0, 0, 0, 0);
+  transition: 0.5s all ease;
+
+  &.active {
+    box-shadow: $shadow-loose;
+  }
 
   @media screen and (max-width: $screen-md-max) {
     padding-top: $navbar-offset-top / 2;

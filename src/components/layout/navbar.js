@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import {findDOMNode} from 'react-dom';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import SearchInput from '../search/search-input';
 import Icon from '../icon';
 import cn from 'classnames';
 import {eras} from '../../modules/images/dict';
+import scrolltop from 'scrolltop';
 
 
 const EraFilter = ({title, era, activeFilter, onClick}) => {
@@ -18,6 +20,25 @@ const EraFilter = ({title, era, activeFilter, onClick}) => {
 
 
 export default class MainNavbar extends Component {
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll.bind(this));
+    this.navEl = findDOMNode(this.refs.navbar);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll.bind(this));
+  }
+
+  onScroll() {
+    const scrollTop = scrolltop();
+
+    if (scrollTop > 50) {
+      this.navEl.classList.add('active');
+    } else {
+      this.navEl.classList.remove('active');
+    }
+  }
+
   render() {
     const {
       searchText,
@@ -32,7 +53,7 @@ export default class MainNavbar extends Component {
     const linkProps = {activeFilter, onClick: activateEra};
 
     return (
-      <Navbar id="navbar" fluid>
+      <Navbar id="navbar" ref="navbar" fluid>
 
         <ul className={cn({'nav': true, 'navbar-nav': true, 'hidden-xs': true, 'opaque': !showNavigation})}>
           {Object.keys(eras).map(n => Number(n)).map(n =>

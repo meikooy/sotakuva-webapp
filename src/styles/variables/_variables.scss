@@ -49,7 +49,7 @@ $content-offset-top: $navbar-height + ($navbar-offset-top * 2) !default;
 $content-offset-top-lg: $content-offset-top !default;
 $content-offset-top-md: $content-offset-top !default;
 $content-offset-top-sm: $content-offset-top !default;
-$content-offset-top-xs: $content-offset-top !default;
+$content-offset-top-xs: $content-offset-top + 50px !default;
 
 
 // shadows
