@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Icon from '../icon';
 import {eras} from '../../modules/images/dict';
+import FacebookProvider, {Comments, Share} from 'react-facebook';
 
 const getImgUrl = (img, size) =>
   `https://api.rintamalla.fi/images/${img.objectID}/file?size=${size}`;
@@ -40,15 +41,22 @@ export default class ImageDetail extends Component {
   render() {
     const {image} = this.props;
     if (!image) return null;
-
     const era = eras[image.era];
-    const detailsLink = `http://sa-kuva.fi/neo?tem=webneo_image_large&lang=FIN&imgid=${image.sa_id}&docid=7aa7d352216b0553;&ddocid=7aa7d352216b0553&archive=`;
+
+    const detailsLink = `http://sa-kuva.fi/neo?tem=webneo_image_large&lang=FIN&imgid=${image.sa_id}&docid=7aa7d352216b0553;&ddocid=7aa7d352216b0553&archive=`; // eslint-disable-line
     return (
       <div className="image-container">
-        <a href={getImgUrl(image, 'large')} target="_blank" className="image-wrapper" style={isMobile ? {} : getWrapperStyle(image)}>
-          {this.state.loading && <Icon name="spinner" spin />}
-          {!this.state.loading && isMobile && <img src={getImgUrl(image, 'thumbnail')} />}
-        </a>
+        <div className="image-area">
+          <a href={getImgUrl(image, 'large')}
+             target="_blank"
+             className="image-wrapper">
+            {this.state.loading && <Icon name="spinner" spin />}
+            {!this.state.loading &&  <img className="img-responsive" src={getImgUrl(image, isMobile ? 'thumbnail' : 'large')} />}
+          </a>
+          <FacebookProvider appID={process.env.FACEBOOK_APP_ID}>
+            <Comments href={window.location.href} />
+          </FacebookProvider>
+        </div>
         <div className="image-details">
           {!!image.caption && <p className="caption">{image.caption}</p>}
           {!!image.description && <p><strong>Lisätietoa</strong><br/>{image.description}</p>}
@@ -76,6 +84,15 @@ export default class ImageDetail extends Component {
             <strong>Lähde:</strong><br />
             <a target="blank" href={detailsLink}>{image.source}</a>
           </p>}
+
+          <p>
+            <strong>Jaa</strong><br />
+            <FacebookProvider appID={process.env.FACEBOOK_APP_ID}>
+              <Share href={window.location.href}>
+                <a href="#">Jaa Facebookissa</a>
+              </Share>
+            </FacebookProvider>
+          </p>
         </div>
       </div>
     );

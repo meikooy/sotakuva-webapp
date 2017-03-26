@@ -22,13 +22,12 @@ perform search
  */
 function* handleSearch({payload}) {
   try {
-    yield call(delay, 100);
+    yield call(delay, 50);
     const response = yield api.fetchByVisibilityFilter(createVisibilityFilter('search', {search: payload}));
     yield put(receiveResponse(response));
   } catch (error) {
     console.log(error);
     yield put(searchError(error));
-    yield put(stopFetching());
   }
 }
 

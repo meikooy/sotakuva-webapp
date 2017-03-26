@@ -27,9 +27,15 @@ export default class Welcome extends Component {
         </div>
         <div className="row">
           <div className="col-md-6 col-md-push-3">
-            <p>Rintamalla.fi -kuvapankki sisältää lähes 160 000 Suomen talvi-, jatko- ja Lapin sodan ajan valokuvaa. Kokoelmassa on kuvia maa-, meri- ja ilmavoimista sekä kotirintamalta.</p>
+            <p>
+              Rintamalla.fi -kuvapankki sisältää lähes 160 000 Suomen talvi-, jatko- ja Lapin sodan ajan valokuvaa.
+              Kokoelmassa on kuvia maa-, meri- ja ilmavoimista sekä kotirintamalta.
+            </p>
 
-            <p>Kuvapankki on toteutettu satavuotiaan Suomen kunniaksi <a target="_blank" href="https://meiko.fi">Meiko</a> Hacks -tapahtumassa 27.1. - 28.1.</p>
+            <p>
+              Kuvapankki on toteutettu satavuotiaan Suomen kunniaksi
+              <a target="_blank" href="https://meiko.fi">Meiko</a> Hacks -tapahtumassa 27.1. - 28.1.2017
+            </p>
 
             <p>Kuvat: <a target="_blank" href="http://sa-kuva.fi">sa-kuva.fi</a></p>
           </div>

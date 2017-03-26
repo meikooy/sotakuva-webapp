@@ -1186,6 +1186,10 @@ camelcase@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
+can-use-dom@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
+
 caniuse-api@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-1.5.2.tgz#8f393c682f661c0a997b77bba6e826483fb3600e"
@@ -1465,6 +1469,10 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+core-decorators@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/core-decorators/-/core-decorators-0.15.0.tgz#e5a58ff7ed48b9d2ef42262fd9550cddde18a819"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -3440,6 +3448,10 @@ keycode@^2.1.2:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.8.tgz#94d2b7098215eff0e8f9a8931d5a59076c4532fb"
 
+keymirror@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
+
 kind-of@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.1.0.tgz#475d698a5e49ff5e53d14e3e732429dc8bf4cf47"
@@ -4746,7 +4758,7 @@ qs@6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
 
-qs@~6.3.0:
+qs@^6.3.0, qs@~6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
@@ -4819,6 +4831,16 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-facebook@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-2.2.5.tgz#1c2d0d0f73366eeb03c1dad0a4c0cde136358a93"
+  dependencies:
+    can-use-dom "^0.1.0"
+    core-decorators "^0.15.0"
+    keymirror "^0.1.1"
+    qs "^6.3.0"
+    react-spinner-children "^1.0.5"
+
 react-maskedinput@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/react-maskedinput/-/react-maskedinput-3.3.4.tgz#773b6e06a384ecbee5c52610597fce3bcdb7fd2d"
@@ -4862,6 +4884,12 @@ react-router@^3.0.0:
     invariant "^2.2.1"
     loose-envify "^1.2.0"
     warning "^3.0.0"
+
+react-spinner-children@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-spinner-children/-/react-spinner-children-1.0.5.tgz#22326add38b88581681d2b775d02170b81124f3a"
+  dependencies:
+    spin.js "^2.3.2"
 
 react-test-renderer@^15.4.1:
   version "15.4.2"
@@ -5448,6 +5476,10 @@ spdx-expression-parse@~1.0.0:
 spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
+
+spin.js@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-2.3.2.tgz#6caa56d520673450fd5cfbc6971e6d0772c37a1a"
 
 split@^1.0.0:
   version "1.0.0"

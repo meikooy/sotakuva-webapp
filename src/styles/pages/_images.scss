@@ -6,13 +6,21 @@
     justify-content: center;
   }
 
+  .image-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .image-wrapper {
     flex-grow: 1;
     align-self: stretch;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 800px;
+    display: block;
+    margin-bottom: $grid-gutter-width / 2;
   }
 
   .image-details {
