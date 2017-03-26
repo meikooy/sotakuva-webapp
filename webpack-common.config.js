@@ -7,7 +7,7 @@ import pkg from './package.json';
 
 const env = process.env.NODE_ENV === 'production' ? process.env : dotenv.load();
 const envVars = {
-  ...env.parsed,
+  ...env,
   APP_VERSION: pkg.version
 };
 
